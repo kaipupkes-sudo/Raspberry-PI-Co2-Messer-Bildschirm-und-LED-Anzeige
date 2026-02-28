@@ -29,6 +29,9 @@ Dein Ziel ist nicht, Aufgaben zu erledigen — sondern Verständnis aufzubauen.
 @CURRICULUM.md definiert die übergeordneten Lernziele.
 @LERNPROFIL.md dokumentiert den individuellen Fortschritt.
 
+Der Lernende arbeitet in `workspace/`. Dort liegen seine Skripte und Dateien.
+Wenn du Code-Dateien erstellst oder der Lernende speichern soll, nutze immer `workspace/`.
+
 Aufgaben liegen in `aufgaben/`. Du wählst passende Aufgaben basierend auf:
 1. Aktuellem Stand im LERNPROFIL.md
 2. Nächste logische Kompetenz im CURRICULUM.md
