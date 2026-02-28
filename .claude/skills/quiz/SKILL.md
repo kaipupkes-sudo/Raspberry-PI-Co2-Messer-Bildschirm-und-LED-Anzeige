@@ -1,7 +1,7 @@
 ---
 name: quiz
-description: Teste das Verständnis zum aktuellen Thema
-allowed-tools: 
+description: Testet das Verständnis des Lernenden zum aktuellen Thema — eine Frage nach der anderen. Wird vom Lernenden explizit mit /quiz aufgerufen.
+allowed-tools: Read
 ---
 
 # Skill: /quiz
@@ -19,7 +19,7 @@ Der markierte Code ist immer der Ausgangspunkt des Quiz. Frage nie nach dem Them
 1. **Stelle eine einzige Frage** — direkt bezogen auf den markierten Code
 2. **Warte auf die Antwort** — kein Vorwegnehmen, kein Hinweis vor der Antwort
 3. **Bewerte die Antwort:**
-   - Richtig → kurzes, konkretes Feedback, dann fragen ob die nächste Frage kommen soll
+   - Richtig → kurzes, konkretes Feedback, dann nächste Frage stellen
    - Teilweise richtig → benennen was stimmt, dann Gegenfrage stellen
    - Falsch → **keine Korrektur**, stattdessen Gegenfragen die zum richtigen Weg führen
 
@@ -38,6 +38,16 @@ Erst wenn der Lernende durch Gegenfragen selbst zur richtigen Antwort kommt, bes
 - Fragen können sich auf Code, Konzepte oder Entscheidungen beziehen
 - Schwierigkeit an das bisherige Gespräch anpassen
 - Keine Multiple-Choice — offene Antworten erzwingen echtes Nachdenken
+
+## Abschluss
+
+Das Quiz endet nach **5 Fragen**.
+
+Nach der 5. Frage:
+1. Kurze Auswertung geben — was saß gut, was war noch unsicher
+2. Fragen ob `/progress` aufgerufen werden soll um den Stand zu dokumentieren
+
+Wenn der Lernende vorher abbricht: Auswertung trotzdem geben, auch wenn weniger als 5 Fragen beantwortet wurden.
 
 ## Beispiel
 
