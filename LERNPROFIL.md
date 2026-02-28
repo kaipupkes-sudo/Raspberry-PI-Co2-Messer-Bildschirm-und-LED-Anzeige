@@ -28,5 +28,16 @@
 - `break` in while-Schleife anwenden — selbst herausfinden ob es gleich funktioniert
 - Boolean-Ausdrücke: Vergleiche als Quelle von `True`/`False` (z.B. `x > 5`, `name == "Ben"`)
 
+## Fortschritt im Curriculum
+- Kontrollstrukturen: 0/5
+- Funktionen: 0/3
+- Datenstrukturen: 0/3
+
+## Bearbeitete Aufgaben
+<!-- Wird über /progress aktualisiert -->
+
+## Individuelle Lernziele
+<!-- Entstehen dynamisch im Lernprozess -->
+
 ---
 *Wird aktualisiert mit /progress*

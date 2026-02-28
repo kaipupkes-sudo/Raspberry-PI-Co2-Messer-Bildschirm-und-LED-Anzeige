@@ -1,25 +1,64 @@
 ---
 name: progress
 description: Dokumentiert den Lernstand nach einer Session. Aktiviere wenn der Lernende /progress aufruft oder eine Session abgeschlossen wird.
-allowed-tools: Read, Write
+allowed-tools: Read, Write, Edit
 ---
 
 
 # /progress
 
 ## Zweck
-Dokumentiere den Lernstand nach einer Session in der `LERNPROFIL.md`.
+Dokumentiere den Lernstand nach einer Session in `LERNPROFIL.md` und gleiche ihn mit `CURRICULUM.md` ab.
 Wird explizit vom Lernenden aufgerufen — ein bewusster Abschluss der Session.
 
 ## Ablauf
 
-1. **Lies die aktuelle `LERNPROFIL.md`** im Projektverzeichnis — was war bisher dokumentiert?
-2. **Schau die Session durch** — was wurde besprochen, was hat funktioniert, wo gab es Schwierigkeiten?
-3. **Stelle dem Lernenden zwei kurze Fragen:**
+1. **Lies die aktuelle `LERNPROFIL.md`** — was war bisher dokumentiert?
+2. **Lies `CURRICULUM.md`** — welche Kompetenzen sind definiert?
+3. **Schau die Session durch** — was wurde besprochen, was hat funktioniert, wo gab es Schwierigkeiten?
+4. **Stelle dem Lernenden zwei kurze Fragen:**
    - „Was hast du heute verstanden, das vorher unklar war?"
    - „Was ist noch offen oder fühlt sich unsicher an?"
-4. **Aktualisiere `LERNPROFIL.md`** im Projektverzeichnis mit den Antworten und deiner eigenen Einschätzung
-5. **Formuliere 1–2 konkrete Lernziele** für die nächste Session
+5. **Aktualisiere `LERNPROFIL.md`** mit den Antworten und deiner eigenen Einschätzung:
+   - Letzte Session (Datum, Thema, Zusammenfassung)
+   - Beherrschte Konzepte (ergänzen)
+   - Schwierigkeiten / Wissenslücken (aktualisieren)
+   - Nächste Lernziele (1–2 konkrete)
+   - **Fortschritt im Curriculum** — Zähler pro Themenblock aktualisieren
+   - **Bearbeitete Aufgaben** — wenn Aufgaben aus `aufgaben/` bearbeitet wurden, Status dokumentieren
+   - **Individuelle Lernziele** — frage ob der Lernende eigene Ziele hat, die nicht im Curriculum stehen
+6. **Aktualisiere `CURRICULUM.md`** — setze Checkboxen (`- [x]`) für Kompetenzen, die der Lernende nachweislich beherrscht
+
+## Curriculum-Abgleich mit Selbsteinschätzung
+
+Eine Kompetenz wird nur abgehakt, wenn **zwei Bedingungen** erfüllt sind:
+
+1. **Du** bewertest die Kompetenz als selbstständig angewendet
+2. **Der Lernende** schätzt sich selbst als "Sitzt" ein
+
+### Selbsteinschätzung erfragen
+
+Für jede Kompetenz, die du als beherrscht einschätzt, frage den Lernenden:
+
+> „Du hast heute [Kompetenz] eigenständig eingesetzt. Wie sicher fühlst du dich damit?"
+> - **Unsicher** — „Ich bräuchte nochmal Hilfe"
+> - **Geht so** — „Ich könnte es, aber müsste nachdenken"
+> - **Sitzt** — „Das kann ich"
+
+### Auswertung
+
+| Du sagst | Lernender sagt | Ergebnis |
+|---|---|---|
+| Beherrscht | Sitzt | Kompetenz abhaken |
+| Beherrscht | Geht so | Offen lassen — nächste Session vertiefen |
+| Beherrscht | Unsicher | Offen lassen — Diskrepanz notieren, gezielt nachfragen |
+| Nicht beherrscht | Sitzt | Nachfragen — „Kannst du mir erklären, wie...?" |
+
+### Dokumentation
+
+- **Begründe jede Abhakung kurz** im LERNPROFIL.md (z.B. "for-Schleife: eigenständig in Aufgabe 01 eingesetzt, Selbsteinschätzung: Sitzt")
+- Dokumentiere auch die Selbsteinschätzung bei Kompetenzen, die noch offen bleiben
+- Der Abgleich gibt dem Lernenden (und der Lehrperson) einen Überblick, wo er im Gesamtbild steht
 
 ## Schreibprinzipien
 
@@ -27,27 +66,6 @@ Wird explizit vom Lernenden aufgerufen — ein bewusster Abschluss der Session.
 - Ehrlich: Wenn etwas noch nicht sitzt, steht es unter Wissenslücken — nicht unter beherrschten Konzepten
 - Kumulativ: Bestehende Einträge werden ergänzt, nicht überschrieben — außer etwas hat sich eindeutig verbessert
 - Datum immer aktualisieren
-
-## Beispiel-Output (LERNPROFIL.md nach /progress)
-
-```
-## Letzte Session
-- Datum: 2026-02-24
-- Thema: for-Schleifen in Python
-- Zusammenfassung: range() verstanden, hat selbst eine Schleife geschrieben die Zahlen ausgibt
-
-## Beherrschte Konzepte
-- Variablen und Zuweisung
-- for-Schleifen mit range()
-
-## Schwierigkeiten / Wissenslücken
-- Unterschied while vs. for noch unklar
-- Einrückung vergisst der Lernende manchmal
-
-## Nächste Lernziele
-- while-Schleifen einführen und mit for vergleichen
-- Eine kleine Aufgabe lösen die beide Schleifentypen braucht
-```
 
 ---
 *Teil des experimentellen Lernplattform-Settings*
