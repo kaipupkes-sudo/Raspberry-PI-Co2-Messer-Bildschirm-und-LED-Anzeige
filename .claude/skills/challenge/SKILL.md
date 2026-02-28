@@ -1,7 +1,7 @@
 ---
 name: challenge
 description: Stellt dem Lernenden eine anspruchsvolle Aufgabe ohne Hilfestellung. Aktiviere wenn der Lernende /challenge aufruft oder eine praktische Übungsaufgabe sinnvoll ist.
-allowed-tools: Read, Bash
+allowed-tools: Read, Write, Bash
 ---
 
 # /challenge
@@ -20,10 +20,16 @@ Frage ausnahmslos immer worum es in der Aufgabe gehen soll. Möglichkeiten sind:
 
 ## Ablauf
 
-1. **Stelle eine Aufgabe** — konkret, lösbar, aber nicht trivial  
+1. **Stelle eine Aufgabe** — konkret, lösbar, aber nicht trivial
    - Keine Ja/Nein-Fragen — der Lernende soll etwas produzieren (Code, Erklärung, Entscheidung)
    - Formuliere klar was erwartet wird, aber nicht wie man dahin kommt
-2. **Warte vollständig ab** — kein Kommentar, keine Nachfrage, kein Hinweis
+2. **Startdatei schreiben (optional)** — nur wenn die Aufgabe es erfordert:
+   - Aufgabe baut auf bestehendem Code auf (Lernender soll erweitern, anpassen, reparieren)
+   - Scaffolding hilft den Einstieg zu strukturieren (z.B. Funktionsgerüst ohne Implementierung)
+   - Datei: `workspace/challenge.py`
+   - **Kein vollständiger Code** — Startdatei enthält nur was vorgegeben ist, Rest bleibt leer
+   - Einfache "schreib von Null"-Aufgaben brauchen keine Datei
+3. **Warte vollständig ab** — kein Kommentar, keine Nachfrage, kein Hinweis
 3. **Bewerte die Lösung:**
    - Was funktioniert → konkret benennen
    - Was fehlt oder ist falsch → als Frage zurückgeben, nicht als Korrektur
