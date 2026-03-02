@@ -29,6 +29,45 @@ Wird explizit vom Lernenden aufgerufen — ein bewusster Abschluss der Session.
    - **Individuelle Lernziele** — frage ob der Lernende eigene Ziele hat, die nicht im Curriculum stehen
 6. **Aktualisiere `CURRICULUM.md`** — setze Checkboxen (`- [x]`) für Kompetenzen, die der Lernende nachweislich beherrscht
 
+7. **Aktualisiere `skilltree.html`** — regeneriere den JSON-Datenblock basierend auf dem neuen Stand von `CURRICULUM.md`:
+
+   **Parsing-Regeln für CURRICULUM.md:**
+   - `### N. TopicName` → Themenblock (`type: "topic"`)
+   - `- [x] Text` (keine Einrückung) → Kompetenz, `status: "done"`
+   - `- [ ] Text` (keine Einrückung) → Kompetenz, `status: "open"`
+   - `  - [x] Text` (2-Leerzeichen-Einrückung) → Unterkompetenz der vorherigen Hauptkompetenz, `status: "done"`
+   - `  - [ ] Text` (2-Leerzeichen-Einrückung) → Unterkompetenz, `status: "open"`
+
+   **Kürze die Kompetenztexte** für den Skill Tree — entferne "Kann ", "Versteht ", trailing phrases wie " zur Iteration nutzen". Behalte den Kernbegriff (z.B. "for-Schleife mit range()", "return vs. print").
+
+   **JSON-Struktur:**
+   ```json
+   {
+     "name": "Python Grundlagen",
+     "type": "root",
+     "children": [
+       {
+         "name": "Themenblock",
+         "type": "topic",
+         "children": [
+           {
+             "name": "Kurzname der Kompetenz",
+             "type": "skill",
+             "status": "done",
+             "children": [
+               { "name": "Unterkompetenz", "type": "skill", "status": "open" }
+             ]
+           }
+         ]
+       }
+     ]
+   }
+   ```
+
+   **Ersetze** in `skilltree.html` den JSON-Inhalt zwischen den Kommentaren:
+   `<!-- CURRICULUM DATA — wird von /progress aktualisiert -->` und `<!-- END CURRICULUM DATA -->`
+   (schreibe dabei den öffnenden `<script type="application/json" id="curriculum-data">` und schließenden `</script>`-Tag mit neu).
+
 ## Curriculum-Abgleich mit Selbsteinschätzung
 
 Eine Kompetenz wird nur abgehakt, wenn **zwei Bedingungen** erfüllt sind:

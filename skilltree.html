@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Tree — Python Grundlagen</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0f172a;
+    color: #e2e8f0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    padding: 32px 24px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    color: #818cf8;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+
+  #stats {
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+
+  #tree-container {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #334155;
+    overflow: auto;
+  }
+
+  /* Links */
+  .link {
+    fill: none;
+    stroke: #334155;
+    stroke-width: 2px;
+  }
+
+  /* Root node */
+  .node.root circle { fill: #4338ca; stroke: #818cf8; stroke-width: 2px; }
+  .node.root text  { fill: #c7d2fe; font-size: 13px; font-weight: 700; }
+
+  /* Topic nodes — color by computed status */
+  .node.topic.done    circle { fill: #166534; stroke: #4ade80; stroke-width: 2px; }
+  .node.topic.partial circle { fill: #78350f; stroke: #fb923c; stroke-width: 2px; }
+  .node.topic.open    circle { fill: #1e3a5f; stroke: #3b82f6; stroke-width: 2px; }
+  .node.topic.done    text   { fill: #86efac; font-size: 12px; font-weight: 600; }
+  .node.topic.partial text   { fill: #fdba74; font-size: 12px; font-weight: 600; }
+  .node.topic.open    text   { fill: #93c5fd; font-size: 12px; font-weight: 600; }
+
+  /* Skill nodes */
+  .node.skill.done circle { fill: #166534; stroke: #4ade80; stroke-width: 2px; }
+  .node.skill.open circle { fill: #1e293b; stroke: #475569; stroke-width: 2px; }
+  .node.skill.done text   { fill: #86efac; font-size: 11px; }
+  .node.skill.open text   { fill: #64748b; font-size: 11px; }
+
+  .node text { font-family: inherit; pointer-events: none; }
+
+  .checkmark { font-size: 9px; fill: #4ade80; font-weight: bold; }
+
+  /* Legend */
+  #legend {
+    display: flex;
+    gap: 24px;
+    margin-top: 18px;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #475569;
+    flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%; border: 2px solid; flex-shrink: 0;
+  }
+  .legend-dot.root    { background: #4338ca; border-color: #818cf8; }
+  .legend-dot.partial { background: #78350f; border-color: #fb923c; }
+  .legend-dot.done    { background: #166534; border-color: #4ade80; }
+  .legend-dot.open    { background: #1e293b; border-color: #475569; }
+
+  #hint {
+    text-align: center;
+    font-size: 0.72rem;
+    color: #334155;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Python Grundlagen — Skill Tree</h1>
+  <div id="stats">Lade…</div>
+</header>
+
+<div id="tree-container">
+  <svg id="tree"></svg>
+</div>
+
+<div id="legend">
+  <div class="legend-item"><div class="legend-dot root"></div><span>Kurs</span></div>
+  <div class="legend-item"><div class="legend-dot partial"></div><span>In Bearbeitung</span></div>
+  <div class="legend-item"><div class="legend-dot done"></div><span>Beherrscht</span></div>
+  <div class="legend-item"><div class="legend-dot open"></div><span>Noch offen</span></div>
+</div>
+
+<p id="hint">Scroll oder Mausrad zum Zoomen · Ziehen zum Verschieben</p>
+
+<!-- CURRICULUM DATA — wird von /progress aktualisiert -->
+<script type="application/json" id="curriculum-data">
+{
+  "name": "Python Grundlagen",
+  "type": "root",
+  "children": [
+    {
+      "name": "Kontrollstrukturen",
+      "type": "topic",
+      "children": [
+        {
+          "name": "if / elif / else",
+          "type": "skill",
+          "status": "done",
+          "children": [
+            { "name": "Truthy / Falsy", "type": "skill", "status": "open" }
+          ]
+        },
+        { "name": "for-Schleife mit range()", "type": "skill", "status": "done" },
+        {
+          "name": "while-Schleife",
+          "type": "skill",
+          "status": "done",
+          "children": [
+            { "name": "break und continue", "type": "skill", "status": "open" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Funktionen",
+      "type": "topic",
+      "children": [
+        { "name": "Funktionen mit Parametern", "type": "skill", "status": "open" },
+        { "name": "return vs. print",           "type": "skill", "status": "open" },
+        { "name": "Benennung und Struktur",      "type": "skill", "status": "open" }
+      ]
+    },
+    {
+      "name": "Datenstrukturen",
+      "type": "topic",
+      "children": [
+        { "name": "Listen und Index",   "type": "skill", "status": "open" },
+        { "name": "Listen iterieren",   "type": "skill", "status": "open" },
+        { "name": "Dictionaries",       "type": "skill", "status": "open" }
+      ]
+    }
+  ]
+}
+</script>
+<!-- END CURRICULUM DATA -->
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+(function () {
+  const data = JSON.parse(document.getElementById('curriculum-data').textContent);
+
+  // Compute status for topic nodes based on child skills
+  function computeStatus(node) {
+    if (node.children) node.children.forEach(computeStatus);
+    if (node.type === 'topic') {
+      const skills = [];
+      function collect(n) {
+        if (n.type === 'skill') skills.push(n.status);
+        if (n.children) n.children.forEach(collect);
+      }
+      collect(node);
+      const doneCount = skills.filter(s => s === 'done').length;
+      node.status = doneCount === skills.length ? 'done'
+                  : doneCount > 0              ? 'partial'
+                  :                              'open';
+    }
+  }
+  computeStatus(data);
+
+  // Stats
+  let total = 0, doneCount = 0;
+  function countStats(node) {
+    if (node.type === 'skill') { total++; if (node.status === 'done') doneCount++; }
+    if (node.children) node.children.forEach(countStats);
+  }
+  countStats(data);
+  document.getElementById('stats').textContent =
+    `${doneCount} von ${total} Kompetenzen beherrscht`;
+
+  // Layout
+  const margin = { top: 20, right: 240, bottom: 20, left: 20 };
+  const innerW = 720;
+  const innerH = 560;
+  const svgW = innerW + margin.left + margin.right;
+  const svgH = innerH + margin.top + margin.bottom;
+
+  const svg = d3.select('#tree')
+    .attr('width', svgW)
+    .attr('height', svgH);
+
+  const zoomGroup = svg.append('g');
+  svg.call(
+    d3.zoom()
+      .scaleExtent([0.4, 3])
+      .on('zoom', (event) => zoomGroup.attr('transform', event.transform))
+  );
+
+  const g = zoomGroup.append('g')
+    .attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const treeFn = d3.tree().size([innerH, innerW]);
+  const root = d3.hierarchy(data);
+  treeFn(root);
+
+  // Links
+  g.selectAll('.link')
+    .data(root.links())
+    .join('path')
+    .attr('class', 'link')
+    .attr('d', d3.linkHorizontal().x(d => d.y).y(d => d.x));
+
+  // Node radius helper
+  const r = d => d.data.type === 'root' ? 14 : d.data.type === 'topic' ? 10 : 7;
+
+  // Nodes
+  const node = g.selectAll('.node')
+    .data(root.descendants())
+    .join('g')
+    .attr('class', d => `node ${d.data.type || 'skill'} ${d.data.status || ''}`)
+    .attr('transform', d => `translate(${d.y},${d.x})`);
+
+  node.append('circle').attr('r', r);
+
+  // Check mark inside done skill nodes
+  node.filter(d => d.data.type === 'skill' && d.data.status === 'done')
+    .append('text')
+    .attr('class', 'checkmark')
+    .attr('text-anchor', 'middle')
+    .attr('dy', '0.35em')
+    .text('✓');
+
+  // Labels — root and leaves go right, inner nodes go left
+  node.append('text')
+    .attr('dy', '0.32em')
+    .attr('x', d => (d.data.type === 'root' || !d.children) ? r(d) + 6 : -(r(d) + 6))
+    .attr('text-anchor', d => (d.data.type === 'root' || !d.children) ? 'start' : 'end')
+    .text(d => d.data.name);
+})();
+</script>
+
+</body>
+</html>

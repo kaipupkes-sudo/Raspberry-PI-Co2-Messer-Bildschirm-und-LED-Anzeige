@@ -9,10 +9,10 @@
 
 ### 1. Kontrollstrukturen
 - [x] Kann if/elif/else zur Fallunterscheidung einsetzen
+  - [ ] Versteht Truthy/Falsy und kann es in Bedingungen nutzen
 - [x] Kann for-Schleife mit range() zur Iteration nutzen
 - [x] Kann while-Schleife mit Abbruchbedingung schreiben
-- [ ] Kann break und continue gezielt einsetzen
-- [ ] Versteht Truthy/Falsy und kann es in Bedingungen nutzen
+  - [ ] Kann break und continue gezielt einsetzen
 
 ### 2. Funktionen
 - [ ] Kann eigene Funktionen mit Parametern definieren
