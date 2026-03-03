@@ -13,3 +13,6 @@ Edit — Gezielte Änderungen in bestehenden Dateien. Ersetzt einen bestimmten T
 Write — Ganze Datei überschreiben. Schreibt den kompletten Inhalt neu. Nötig wenn eine Datei komplett neu erstellt wird oder so viele Änderungen nötig sind, dass Edit unpraktisch wäre.
 
 Bash — Shell-Befehle ausführen. Bräuchte /progress eigentlich nicht — es liest und schreibt nur Markdown-Dateien, keine Systembefehle nötig.
+
+
+//TODO: Glossar

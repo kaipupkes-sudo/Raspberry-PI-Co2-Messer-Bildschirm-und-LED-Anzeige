@@ -15,6 +15,6 @@ while go_on:
         geratene_zahl = int(input(f"Geben Sie die Schätzung Nummer {i} ein"))
     
     else:
-        go_on = False
-        print(f"Richtig. Du hast {i} Versuche gebraucht")
+        go_on = True
+        print(f"Richtig. Du hast {None} Versuche gebraucht")
      
