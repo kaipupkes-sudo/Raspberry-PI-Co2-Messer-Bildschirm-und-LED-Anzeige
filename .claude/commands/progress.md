@@ -8,13 +8,13 @@ allowed-tools: Read, Write, Edit
 # /progress
 
 ## Zweck
-Dokumentiere den Lernstand nach einer Session in `LERNPROFIL.md` und gleiche ihn mit `CURRICULUM.md` ab.
+Dokumentiere den Lernstand nach einer Session in `LERNPROFIL.md` und aktualisiere `curriculum.yaml`.
 Wird explizit vom Lernenden aufgerufen — ein bewusster Abschluss der Session.
 
 ## Ablauf
 
 1. **Lies die aktuelle `LERNPROFIL.md`** — was war bisher dokumentiert?
-2. **Lies `CURRICULUM.md`** — welche Kompetenzen sind definiert?
+2. **Lies `curriculum.yaml`** — welche Kompetenzen existieren, was ist offen/done?
 3. **Schau die Session durch** — was wurde besprochen, was hat funktioniert, wo gab es Schwierigkeiten?
 4. **Stelle dem Lernenden zwei kurze Fragen:**
    - „Was hast du heute verstanden, das vorher unklar war?"
@@ -27,50 +27,28 @@ Wird explizit vom Lernenden aufgerufen — ein bewusster Abschluss der Session.
    - **Fortschritt im Curriculum** — Zähler pro Themenblock aktualisieren
    - **Bearbeitete Aufgaben** — wenn Aufgaben aus `aufgaben/` bearbeitet wurden, Status dokumentieren
    - **Individuelle Lernziele** — frage ob der Lernende eigene Ziele hat, die nicht im Curriculum stehen
-6. **Aktualisiere `CURRICULUM.md`** — setze Checkboxen (`- [x]`) für Kompetenzen, die der Lernende nachweislich beherrscht
+6. **Aktualisiere `curriculum.yaml`** — setze `status: done` für Kompetenzen, die der Lernende nachweislich beherrscht.
+   Füge bei abgehakten Kompetenzen hinzu:
+   - `completed: "DATUM"` — Datum der Session
+   - `selfRating: sitzt | geht so | unsicher` — Selbsteinschätzung des Lernenden
 
-7. **Aktualisiere `skilltree.html`** — regeneriere den JSON-Datenblock basierend auf dem neuen Stand von `CURRICULUM.md`:
-
-   **Parsing-Regeln für CURRICULUM.md:**
-   - `### N. TopicName` → Themenblock (`type: "topic"`)
-   - `- [x] Text` (keine Einrückung) → Kompetenz, `status: "done"`
-   - `- [ ] Text` (keine Einrückung) → Kompetenz, `status: "open"`
-   - `  - [x] Text` (2-Leerzeichen-Einrückung) → Unterkompetenz der vorherigen Hauptkompetenz, `status: "done"`
-   - `  - [ ] Text` (2-Leerzeichen-Einrückung) → Unterkompetenz, `status: "open"`
-
-   **Kürze die Kompetenztexte** für den Skill Tree — entferne "Kann ", "Versteht ", trailing phrases wie " zur Iteration nutzen". Behalte den Kernbegriff (z.B. "for-Schleife mit range()", "return vs. print").
-
-   **JSON-Struktur:**
-   ```json
-   {
-     "name": "Python Grundlagen",
-     "type": "root",
-     "children": [
-       {
-         "name": "Themenblock",
-         "type": "topic",
-         "children": [
-           {
-             "name": "Kurzname der Kompetenz",
-             "type": "skill",
-             "status": "done",
-             "children": [
-               { "name": "Unterkompetenz", "type": "skill", "status": "open" }
-             ]
-           }
-         ]
-       }
-     ]
-   }
+   **YAML-Struktur zur Orientierung:**
+   ```yaml
+   - name: Kompetenzname
+     status: done          # oder: open
+     completed: "2026-02-28"
+     selfRating: sitzt
+     children:
+       - name: Unterkompetenz
+         status: open
    ```
+   Kein Parsing nötig — die Struktur ist direkt editierbar.
 
-   **Ersetze** in `skilltree.html` den JSON-Inhalt zwischen den Kommentaren:
-   `<!-- CURRICULUM DATA — wird von /progress aktualisiert -->` und `<!-- END CURRICULUM DATA -->`
-   (schreibe dabei den öffnenden `<script type="application/json" id="curriculum-data">` und schließenden `</script>`-Tag mit neu).
+7. **`skilltree.html` muss nicht mehr aktualisiert werden** — die Seite liest `curriculum.yaml` direkt beim Laden. Ein Reload der Seite zeigt den aktuellen Stand.
 
 ## Curriculum-Abgleich mit Selbsteinschätzung
 
-Eine Kompetenz wird nur abgehakt, wenn **zwei Bedingungen** erfüllt sind:
+Eine Kompetenz wird nur auf `status: done` gesetzt, wenn **zwei Bedingungen** erfüllt sind:
 
 1. **Du** bewertest die Kompetenz als selbstständig angewendet
 2. **Der Lernende** schätzt sich selbst als "Sitzt" ein

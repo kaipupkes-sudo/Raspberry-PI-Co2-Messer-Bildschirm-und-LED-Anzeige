@@ -1,7 +1,11 @@
 # Lernprofil
 
 ## Letzte Session
-- **Datum:** 2026-02-28
+- **Datum:** 2026-03-02
+- **Thema:** Progress-Check — keine neue Lernsession
+- **Zusammenfassung:** Kein neues Thema erarbeitet. Progress-Check aufgerufen, um Stand zu dokumentieren. Singleton Pattern als individuelles Interesse genannt (liegt außerhalb des aktuellen Curriculums).
+
+## Vorherige Session (2026-02-28)
 - **Thema:** Zahlenratespiel — while-Schleife, import random, input() mit int()
 - **Zusammenfassung:** Aufgabe 04_zahlenratespiel eigenständig gebaut. Hat while-Schleife mit Boolean-Flag (`go_on`) als Abbruchbedingung eigenständig konstruiert. `import random` und `random.randint()` selbst recherchiert. Off-by-one-Fehler bei `randint(1, 101)` (inklusiv vs. exklusiv) und Zähler-Fehler eigenständig erkannt und behoben. Selbsteinschätzung while-Schleife: Sitzt.
 
@@ -43,7 +47,7 @@
 - 04_zahlenratespiel: gelöst (2026-02-28) — eigenständig, inkl. Fehlerkorrektur bei randint und Zähler
 
 ## Individuelle Lernziele
-<!-- Entstehen dynamisch im Lernprozess -->
+- **Singleton Pattern**: Interesse geäußert (2026-03-02) — Design Pattern, liegt außerhalb Python Grundlagen; kann nach Abschluss von Funktionen aufgegriffen werden
 
 ---
 *Wird aktualisiert mit /progress*

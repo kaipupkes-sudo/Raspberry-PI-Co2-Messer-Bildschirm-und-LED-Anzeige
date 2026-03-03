@@ -1,0 +1,40 @@
+title: Python Grundlagen
+topics:
+  - name: Kontrollstrukturen
+    skills:
+      - name: if/elif/else
+        status: done
+        completed: "2026-02-28"
+        selfRating: sitzt
+        children:
+          - name: Truthy/Falsy
+            status: open
+      - name: for-Schleife mit range()
+        status: done
+        completed: "2026-02-28"
+        selfRating: sitzt
+      - name: while-Schleife
+        status: done
+        completed: "2026-02-28"
+        selfRating: sitzt
+        children:
+          - name: break und continue
+            status: open
+
+  - name: Funktionen
+    skills:
+      - name: Funktionen mit Parametern
+        status: done
+      - name: return vs. print
+        status: done
+      - name: Benennung und Struktur
+        status: done
+
+  - name: Datenstrukturen
+    skills:
+      - name: Listen und Index
+        status: open
+      - name: Listen iterieren
+        status: open
+      - name: Dictionaries
+        status: open

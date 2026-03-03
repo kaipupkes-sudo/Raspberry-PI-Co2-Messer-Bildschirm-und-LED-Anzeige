@@ -117,62 +117,38 @@
 
 <p id="hint">Scroll oder Mausrad zum Zoomen · Ziehen zum Verschieben</p>
 
-<!-- CURRICULUM DATA — wird von /progress aktualisiert -->
-<script type="application/json" id="curriculum-data">
-{
-  "name": "Python Grundlagen",
-  "type": "root",
-  "children": [
-    {
-      "name": "Kontrollstrukturen",
-      "type": "topic",
-      "children": [
-        {
-          "name": "if / elif / else",
-          "type": "skill",
-          "status": "done",
-          "children": [
-            { "name": "Truthy / Falsy", "type": "skill", "status": "open" }
-          ]
-        },
-        { "name": "for-Schleife mit range()", "type": "skill", "status": "done" },
-        {
-          "name": "while-Schleife",
-          "type": "skill",
-          "status": "done",
-          "children": [
-            { "name": "break und continue", "type": "skill", "status": "open" }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Funktionen",
-      "type": "topic",
-      "children": [
-        { "name": "Funktionen mit Parametern", "type": "skill", "status": "open" },
-        { "name": "return vs. print",           "type": "skill", "status": "open" },
-        { "name": "Benennung und Struktur",      "type": "skill", "status": "open" }
-      ]
-    },
-    {
-      "name": "Datenstrukturen",
-      "type": "topic",
-      "children": [
-        { "name": "Listen und Index",   "type": "skill", "status": "open" },
-        { "name": "Listen iterieren",   "type": "skill", "status": "open" },
-        { "name": "Dictionaries",       "type": "skill", "status": "open" }
-      ]
-    }
-  ]
-}
-</script>
-<!-- END CURRICULUM DATA -->
-
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
-(function () {
-  const data = JSON.parse(document.getElementById('curriculum-data').textContent);
+function yamlToTree(yaml) {
+  function mapSkill(skill) {
+    const node = { name: skill.name, type: 'skill', status: skill.status || 'open' };
+    if (skill.children && skill.children.length > 0)
+      node.children = skill.children.map(mapSkill);
+    return node;
+  }
+  return {
+    name: yaml.title,
+    type: 'root',
+    children: yaml.topics.map(topic => ({
+      name: topic.name,
+      type: 'topic',
+      children: (topic.skills || []).map(mapSkill)
+    }))
+  };
+}
+
+async function init() {
+  let data;
+  try {
+    const resp = await fetch('curriculum.yaml');
+    if (!resp.ok) throw new Error(resp.statusText);
+    data = yamlToTree(jsyaml.load(await resp.text()));
+  } catch (e) {
+    document.getElementById('stats').textContent =
+      'Seite über einen lokalen Server öffnen — z.B.: python -m http.server';
+    return;
+  }
 
   // Compute status for topic nodes based on child skills
   function computeStatus(node) {
@@ -260,7 +236,9 @@
     .attr('x', d => (d.data.type === 'root' || !d.children) ? r(d) + 6 : -(r(d) + 6))
     .attr('text-anchor', d => (d.data.type === 'root' || !d.children) ? 'start' : 'end')
     .text(d => d.data.name);
-})();
+}
+
+init();
 </script>
 
 </body>

@@ -26,7 +26,8 @@ Dein Ziel ist nicht, Aufgaben zu erledigen — sondern Verständnis aufzubauen.
 
 ## Lernsteuerung
 
-@CURRICULUM.md definiert die übergeordneten Lernziele.
+@CURRICULUM.md beschreibt die Lerninhalte und pädagogischen Ziele.
+@curriculum.yaml dokumentiert den aktuellen Kompetenzstand und speist den Skill Tree.
 @LERNPROFIL.md dokumentiert den individuellen Fortschritt.
 
 Der Lernende arbeitet in `workspace/`. Dort liegen seine Skripte und Dateien.

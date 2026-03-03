@@ -8,21 +8,26 @@
 ## Themenblöcke
 
 ### 1. Kontrollstrukturen
-- [x] Kann if/elif/else zur Fallunterscheidung einsetzen
-  - [ ] Versteht Truthy/Falsy und kann es in Bedingungen nutzen
-- [x] Kann for-Schleife mit range() zur Iteration nutzen
-- [x] Kann while-Schleife mit Abbruchbedingung schreiben
-  - [ ] Kann break und continue gezielt einsetzen
+
+- if/elif/else zur Fallunterscheidung einsetzen
+  - Truthy/Falsy verstehen und in Bedingungen nutzen
+  - unterschied if elif
+    - else 
+- for-Schleife mit range() zur Iteration
+- while-Schleife mit Abbruchbedingung
+  - break und continue gezielt einsetzen
 
 ### 2. Funktionen
-- [ ] Kann eigene Funktionen mit Parametern definieren
-- [ ] Versteht return vs. print
-- [ ] Kann Funktionen sinnvoll benennen und strukturieren
+
+- Eigene Funktionen mit Parametern definieren
+- return vs. print verstehen
+- Funktionen sinnvoll benennen und strukturieren
 
 ### 3. Datenstrukturen
-- [ ] Kann Listen erstellen und mit Indizes zugreifen
-- [ ] Kann über Listen iterieren
-- [ ] Kann Dictionaries für Schlüssel-Wert-Paare nutzen
+
+- Listen erstellen und mit Indizes zugreifen
+- Über Listen iterieren
+- Dictionaries für Schlüssel-Wert-Paare nutzen
 
 ---
-*Wird von der Lehrperson gepflegt. Checkboxen werden über /progress aktualisiert.*
+*Wird von der Lehrperson gepflegt. Kompetenzstatus wird in `curriculum.yaml` getrackt.*
