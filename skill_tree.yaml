@@ -99,3 +99,624 @@ topics:
           bewerten:
             done: false
             completed_at: null
+
+  - id: "2"
+    name: Hardware & GPIO — Grundlagen
+    skills:
+      - id: "2.1.1"
+        name: GPIO-Pins — Input und Output
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "2.1.2"
+        name: LED ansteuern
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "2.1.3"
+        name: Taster einlesen
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+  - id: "3"
+    name: Daten & Variablen
+    skills:
+      - id: "3.1.1"
+        name: Zuweisung, Benennung, Konventionen
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "3.2.1"
+        name: int, float, str, bool
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "3.3.1"
+        name: Typkonvertierung — int(), str(), float()
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "3.4.1"
+        name: Arithmetische Operatoren
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "3.4.2"
+        name: Vergleichsoperatoren
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+      - id: "3.4.3"
+        name: Logische Operatoren
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+  - id: "4"
+    name: Funktionen
+    skills:
+      - id: "4.1.1"
+        name: Definition mit def, Parameter, Rückgabewert
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "4.1.2"
+        name: return vs. print
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+      - id: "4.2.1"
+        name: Scope — lokal vs. global
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "4.3.1"
+        name: Standardargumente & Keyword-Argumente
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+      - id: "4.3.2"
+        name: Docstrings
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+  - id: "5"
+    name: Datenstrukturen
+    skills:
+      - id: "5.1.1"
+        name: Listen — Erstellen, Indexzugriff, Slicing
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "5.1.2"
+        name: Listen — Methoden append, remove, pop, sort
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+      - id: "5.1.3"
+        name: Iteration über Listen
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+      - id: "5.1.4"
+        name: List Comprehensions
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "5.2.1"
+        name: Dictionaries — Schlüssel-Wert-Paare, Zugriff, Einfügen, Löschen
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "5.2.2"
+        name: Dictionaries — Iteration über Keys/Values
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+      - id: "5.2.3"
+        name: Verschachtelte Dictionaries
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+  - id: "6"
+    name: Fehlerbehandlung
+    skills:
+      - id: "6.1.1"
+        name: try, except, finally
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "6.1.2"
+        name: Spezifische Exceptions
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "6.1.3"
+        name: Eigene Fehlermeldungen
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+  - id: "7"
+    name: Module & Bibliotheken
+    skills:
+      - id: "7.1.1"
+        name: import, from … import
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+      - id: "7.2.1"
+        name: Standardbibliothek — random, time, math, os
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+      - id: "7.3.1"
+        name: pip und externe Pakete
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+  - id: "8"
+    name: Hardware & GPIO — Erweitert
+    skills:
+      - id: "8.1.1"
+        name: ADC — Analog-Digital-Wandlung
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+      - id: "8.1.2"
+        name: Sensorwerte einlesen und verarbeiten
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "8.2.1"
+        name: I²C
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+
+      - id: "8.2.2"
+        name: SPI
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+
+      - id: "8.2.3"
+        name: UART / Serial
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+
+      - id: "8.3.1"
+        name: RPi.GPIO vs. gpiozero
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null

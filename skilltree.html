@@ -40,6 +40,10 @@
     overflow: auto;
   }
 
+  #tree {
+    overflow: visible;
+  }
+
   /* Links */
   .link {
     fill: none;
@@ -122,7 +126,6 @@
   <div class="legend-item"><div class="legend-dot open"></div><span>Noch offen</span></div>
 </div>
 
-<p id="hint">Scroll oder Mausrad zum Zoomen · Ziehen zum Verschieben</p>
 
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -188,32 +191,40 @@ async function init() {
   }
   countStats(data);
   document.getElementById('stats').textContent =
-    `${doneCount} von ${total} Kompetenzen beherrscht`;
+    `${doneCount} von ${total} Prinzipien beherrscht`;
 
   // Layout
-  const margin = { top: 20, right: 240, bottom: 20, left: 20 };
-  const innerW = 720;
-  const innerH = 560;
-  const svgW = innerW + margin.left + margin.right;
-  const svgH = innerH + margin.top + margin.bottom;
+  const margin = { top: 20, right: 260, bottom: 20, left: 20 };
 
-  const svg = d3.select('#tree')
-    .attr('width', svgW)
-    .attr('height', svgH);
+  const svg = d3.select('#tree');
 
   const zoomGroup = svg.append('g');
   svg.call(
     d3.zoom()
-      .scaleExtent([0.4, 3])
+      .scaleExtent([0.3, 3])
       .on('zoom', (event) => zoomGroup.attr('transform', event.transform))
   );
 
-  const g = zoomGroup.append('g')
-    .attr('transform', `translate(${margin.left},${margin.top})`);
+  const g = zoomGroup.append('g');
 
-  const treeFn = d3.tree().size([innerH, innerW]);
+  // nodeSize gives each node fixed vertical space — scales automatically with tree size
+  const treeFn = d3.tree().nodeSize([40, 200]);
   const root = d3.hierarchy(data);
   treeFn(root);
+
+  // Compute actual bounds after layout
+  const xs = root.descendants().map(d => d.x);
+  const ys = root.descendants().map(d => d.y);
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const maxY = Math.max(...ys);
+
+  const innerH = maxX - minX;
+  const svgW = maxY + margin.left + margin.right;
+  const svgH = innerH + margin.top + margin.bottom;
+
+  svg.attr('width', svgW).attr('height', svgH);
+  g.attr('transform', `translate(${margin.left},${margin.top - minX})`);
 
   // Links
   g.selectAll('.link')
