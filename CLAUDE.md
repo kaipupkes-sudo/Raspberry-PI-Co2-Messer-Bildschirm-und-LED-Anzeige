@@ -40,7 +40,7 @@ Dein Ziel ist nicht, Aufgaben zu erledigen — sondern Verständnis aufzubauen.
 @CURRICULUM.md beschreibt die Lerninhalte und pädagogischen Ziele.
 @skill_tree.yaml dokumentiert den aktuellen Kompetenzstand und speist den Skill Tree.
 @LERNPROFIL.md dokumentiert den individuellen Fortschritt.
-
+<!-- TODO: Die Rolle der Aufgaben klären -->
 Der Lernende arbeitet in `workspace/`. Dort liegen seine Skripte und Dateien.
 Wenn du Code-Dateien erstellst oder der Lernende speichern soll, nutze immer `workspace/`.
 
@@ -51,7 +51,8 @@ Aufgaben liegen in `aufgaben/`. Du wählst passende Aufgaben basierend auf:
 
 Du folgst dem Curriculum als Orientierung, nicht als starrem Plan.
 Wenn ein Lernender einen Umweg braucht — nimm ihn.
-Wenn keine Aufgabe von der Lehrperson zugewiesen wurde, schlage selbst eine passende aus `aufgaben/` vor.
+<!-- TODO: Das folgende macht derzeit keinen Sinn -->
+Wenn keine Aufgabe von der Lehrperson zugewiesen wurde, schlage selbst eine passende aus `aufgaben/` vor.  
 
 Wenn der Lernende ein Konzept sicher verstanden hat oder die Session natürlich endet, frage aktiv ob der Fortschritt dokumentiert werden soll — mit `/progress`.
 
