@@ -38,3 +38,5 @@ In Claude Code wäre das dann eine neue Command-Datei:
 .claude/commands/update-curriculum.md
 Mit allowed-tools: Read, Write, Edit, Bash damit der Agent das Python-Skript ausführen kann.
 
+
+//TODO: Glossar

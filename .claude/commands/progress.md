@@ -88,5 +88,8 @@ Für jede Kompetenz, die du als beherrscht einschätzt, frage den Lernenden:
 - Kumulativ: Bestehende Einträge werden ergänzt, nicht überschrieben — außer etwas hat sich eindeutig verbessert
 - Datum immer aktualisieren
 
+<!-- TODO: Hier glossar einfügen 
+Glossar eintrag soll in eigenen worten erfolgen, wird von Claude formuliert-->
+
 ---
 *Teil des experimentellen Lernplattform-Settings*

@@ -1,13 +1,9 @@
 # Lernprofil
 
 ## Letzte Session
-- **Datum:** 2026-03-02
-- **Thema:** Progress-Check — keine neue Lernsession
-- **Zusammenfassung:** Kein neues Thema erarbeitet. Progress-Check aufgerufen, um Stand zu dokumentieren. Singleton Pattern als individuelles Interesse genannt (liegt außerhalb des aktuellen Curriculums).
-
-## Vorherige Session (2026-02-28)
-- **Thema:** Zahlenratespiel — while-Schleife, import random, input() mit int()
-- **Zusammenfassung:** Aufgabe 04_zahlenratespiel eigenständig gebaut. Hat while-Schleife mit Boolean-Flag (`go_on`) als Abbruchbedingung eigenständig konstruiert. `import random` und `random.randint()` selbst recherchiert. Off-by-one-Fehler bei `randint(1, 101)` (inklusiv vs. exklusiv) und Zähler-Fehler eigenständig erkannt und behoben. Selbsteinschätzung while-Schleife: Sitzt.
+- **Datum:** 2026-03-03
+- **Thema:** Kurzsession — None als Datentyp
+- **Zusammenfassung:** Kurze Session ohne neue Aufgabe. Lernender hat eigenständig erkannt dass `None` ein eigener Datentyp ist (in raten.py Zeile 19 entdeckt). Kein Curriculum-Thema bearbeitet. Interesse an float und ENUM als nächste Themen geäußert.
 
 ## Beherrschte Konzepte
 - while-Schleife: Grundprinzip verstanden (läuft solange Bedingung True ist)
@@ -25,6 +21,7 @@
 - `return` außerhalb Funktion: weiß dass das ein SyntaxError ist und warum
 - `import random`, `random.randint(a, b)`: selbst recherchiert, inklusiven Bereich verstanden
 - `input()` mit `int()`-Konvertierung: eingesetzt, aber noch nicht sicher (siehe Wissenslücken)
+- `None`: als eigener Datentyp erkannt (nicht 0, nicht False, nicht leerer String)
 
 ## Schwierigkeiten / Wissenslücken
 - `input()` mit Typkonvertierung: `int(input(...))` genutzt, aber fühlt sich noch unsicher an — Fehlerverhalten bei falscher Eingabe unbekannt
@@ -36,6 +33,8 @@
 ## Nächste Lernziele
 - `break` in while-Schleife ausprobieren — selbst herausfinden ob es gleich funktioniert wie Boolean-Flag
 - `input()` und Typkonvertierung vertiefen — was passiert bei falscher Eingabe?
+- float als Datentyp kennenlernen (Lernendenwunsch)
+- ENUM in Python erkunden (Lernendenwunsch — was ist das überhaupt?)
 
 ## Fortschritt im Curriculum
 - Kontrollstrukturen: 3/5
@@ -47,7 +46,8 @@
 - 04_zahlenratespiel: gelöst (2026-02-28) — eigenständig, inkl. Fehlerkorrektur bei randint und Zähler
 
 ## Individuelle Lernziele
-- **Singleton Pattern**: Interesse geäußert (2026-03-02) — Design Pattern, liegt außerhalb Python Grundlagen; kann nach Abschluss von Funktionen aufgegriffen werden
+- float als Datentyp (über Curriculum hinaus — eigenes Interesse)
+- ENUM in Python (über Curriculum hinaus — eigenes Interesse, gehört, will verstehen was das ist)
 
 ---
 *Wird aktualisiert mit /progress*
