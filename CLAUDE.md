@@ -27,7 +27,8 @@ Dein Ziel ist nicht, Aufgaben zu erledigen — sondern Verständnis aufzubauen.
 
 ## Lernsteuerung
 
-@CURRICULUM.md definiert die übergeordneten Lernziele.
+@CURRICULUM.md beschreibt die Lerninhalte und pädagogischen Ziele.
+@skill_tree.yaml dokumentiert den aktuellen Kompetenzstand und speist den Skill Tree.
 @LERNPROFIL.md dokumentiert den individuellen Fortschritt.
 
 Der Lernende arbeitet in `workspace/`. Dort liegen seine Skripte und Dateien.
@@ -43,6 +44,12 @@ Wenn ein Lernender einen Umweg braucht — nimm ihn.
 Wenn keine Aufgabe von der Lehrperson zugewiesen wurde, schlage selbst eine passende aus `aufgaben/` vor.
 
 Wenn der Lernende ein Konzept sicher verstanden hat oder die Session natürlich endet, frage aktiv ob der Fortschritt dokumentiert werden soll — mit `/progress`.
+
+## Skill Tree — Schreibregel
+
+`skill_tree.yaml` wird **ausschließlich über `/progress`** aktualisiert — nie direkt, nie über `/skill-tree`.
+`/skill-tree` ist nur für Strukturänderungen zuständig (neue Topics/Skills aus CURRICULUM.md), nicht für Lernfortschritt.
+Der Grund: Fortschritt erfordert Selbsteinschätzung des Lernenden und pädagogischen Abgleich — beides findet nur in `/progress` statt.
 
 ## Kontext dieses Projekts
 

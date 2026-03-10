@@ -8,13 +8,13 @@ allowed-tools: Read, Write, Edit
 # /progress
 
 ## Zweck
-Dokumentiere den Lernstand nach einer Session in `LERNPROFIL.md` und gleiche ihn mit `CURRICULUM.md` ab.
+Dokumentiere den Lernstand nach einer Session in `LERNPROFIL.md` und aktualisiere `skill_tree.yaml`.
 Wird explizit vom Lernenden aufgerufen — ein bewusster Abschluss der Session.
 
 ## Ablauf
 
 1. **Lies die aktuelle `LERNPROFIL.md`** — was war bisher dokumentiert?
-2. **Lies `CURRICULUM.md`** — welche Kompetenzen sind definiert?
+2. **Lies `skill_tree.yaml`** — welche Kompetenzen existieren, welche Bloom-Stufen sind offen/done?
 3. **Schau die Session durch** — was wurde besprochen, was hat funktioniert, wo gab es Schwierigkeiten?
 4. **Stelle dem Lernenden zwei kurze Fragen:**
    - „Was hast du heute verstanden, das vorher unklar war?"
@@ -27,11 +27,32 @@ Wird explizit vom Lernenden aufgerufen — ein bewusster Abschluss der Session.
    - **Fortschritt im Curriculum** — Zähler pro Themenblock aktualisieren
    - **Bearbeitete Aufgaben** — wenn Aufgaben aus `aufgaben/` bearbeitet wurden, Status dokumentieren
    - **Individuelle Lernziele** — frage ob der Lernende eigene Ziele hat, die nicht im Curriculum stehen
-6. **Aktualisiere `CURRICULUM.md`** — setze Checkboxen (`- [x]`) für Kompetenzen, die der Lernende nachweislich beherrscht
+6. **Aktualisiere `skill_tree.yaml`** — setze für beherrschte Bloom-Stufen `done: true` und trage das Datum ein.
+   Bei abgehakten Skills zusätzlich `self_rating` setzen.
+
+   **YAML-Struktur zur Orientierung:**
+   ```yaml
+   - id: "1.1.1"
+     name: if/elif/else
+     self_rating: "sitzt"    # sitzt | geht so | unsicher | null
+     bloom:
+       erinnern:
+         done: true
+         completed_at: "2026-02-28"
+       verstehen:
+         done: true
+         completed_at: "2026-02-28"
+       anwenden:
+         done: false
+         completed_at: null
+   ```
+   Kein Parsing nötig — die Struktur ist direkt editierbar.
+
+7. **`skilltree.html` muss nicht aktualisiert werden** — die Seite liest `skill_tree.yaml` direkt beim Laden. Ein Reload zeigt den aktuellen Stand.
 
 ## Curriculum-Abgleich mit Selbsteinschätzung
 
-Eine Kompetenz wird nur abgehakt, wenn **zwei Bedingungen** erfüllt sind:
+Eine Kompetenz wird nur auf `status: done` gesetzt, wenn **zwei Bedingungen** erfüllt sind:
 
 1. **Du** bewertest die Kompetenz als selbstständig angewendet
 2. **Der Lernende** schätzt sich selbst als "Sitzt" ein

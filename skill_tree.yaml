@@ -1,0 +1,101 @@
+title: Python & Raspberry Pi Grundlagen
+topics:
+  - id: "1"
+    name: Kontrollstrukturen
+    skills:
+      - id: "1.1.1"
+        name: if / elif / else
+        self_rating: "sitzt"
+        bloom:
+          erinnern:
+            done: true
+            completed_at: "2026-02-28"
+          verstehen:
+            done: true
+            completed_at: "2026-02-28"
+          anwenden:
+            done: true
+            completed_at: "2026-02-28"
+          analysieren:
+            done: true
+            completed_at: "2026-02-28"
+          bewerten:
+            done: true
+            completed_at: "2026-02-28"
+
+      - id: "1.1.2"
+        name: Truthy / Falsy
+        self_rating: null
+        bloom:
+          erinnern:
+            done: true
+            completed_at: "2026-02-28"
+          verstehen:
+            done: true
+            completed_at: "2026-02-28"
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: true
+            completed_at: "2026-02-28"
+
+      - id: "1.2.1"
+        name: for-Schleife
+        self_rating: "sitzt"
+        bloom:
+          erinnern:
+            done: true
+            completed_at: "2026-03-10"
+          verstehen:
+            done: true
+            completed_at: "2026-03-10"
+          anwenden:
+            done: true
+            completed_at: "2026-02-28"
+          analysieren:
+            done: true
+            completed_at: "2026-03-10"
+          bewerten:
+            done: true
+            completed_at: "2026-03-10"
+
+      - id: "1.2.2"
+        name: while-Schleife
+        self_rating: "sitzt"
+        bloom:
+          erinnern:
+            done: true
+            completed_at: "2026-02-28"
+          verstehen:
+            done: true
+            completed_at: "2026-02-28"
+          anwenden:
+            done: true
+            completed_at: "2026-02-28"
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
+
+      - id: "1.2.3"
+        name: break / continue / pass
+        self_rating: null
+        bloom:
+          erinnern:
+            done: false
+            completed_at: null
+          verstehen:
+            done: false
+            completed_at: null
+          anwenden:
+            done: false
+            completed_at: null
+          analysieren:
+            done: false
+            completed_at: null
+          bewerten:
+            done: false
+            completed_at: null
