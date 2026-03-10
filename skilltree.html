@@ -60,14 +60,21 @@
   .node.topic.open    text   { fill: #93c5fd; font-size: 12px; font-weight: 600; }
 
   /* Skill nodes */
-  .node.skill.done circle { fill: #166534; stroke: #4ade80; stroke-width: 2px; }
-  .node.skill.open circle { fill: #1e293b; stroke: #475569; stroke-width: 2px; }
-  .node.skill.done text   { fill: #86efac; font-size: 11px; }
-  .node.skill.open text   { fill: #64748b; font-size: 11px; }
+  .node.skill.done    circle { fill: #166534; stroke: #4ade80; stroke-width: 2px; }
+  .node.skill.partial circle { fill: #78350f; stroke: #fb923c; stroke-width: 2px; }
+  .node.skill.open    circle { fill: #1e293b; stroke: #475569; stroke-width: 2px; }
+  .node.skill.done    text   { fill: #86efac; font-size: 11px; }
+  .node.skill.partial text   { fill: #fdba74; font-size: 11px; }
+  .node.skill.open    text   { fill: #64748b; font-size: 11px; }
 
   .node text { font-family: inherit; pointer-events: none; }
 
   .checkmark { font-size: 9px; fill: #4ade80; font-weight: bold; }
+
+  .bloom-stars { font-size: 8px; letter-spacing: 1px; }
+  .node.skill.done    .bloom-stars { fill: #4ade80; }
+  .node.skill.partial .bloom-stars { fill: #fb923c; }
+  .node.skill.open    .bloom-stars { fill: #475569; }
 
   /* Legend */
   #legend {
@@ -122,10 +129,15 @@
 <script>
 function yamlToTree(yaml) {
   function mapSkill(skill) {
-    const node = { name: skill.name, type: 'skill', status: skill.status || 'open' };
-    if (skill.children && skill.children.length > 0)
-      node.children = skill.children.map(mapSkill);
-    return node;
+    const bloom = skill.bloom || {};
+    const levels = Object.values(bloom);
+    const doneCount = levels.filter(l => l && l.done).length;
+    const status = levels.length === 0 ? 'open'
+                 : doneCount === levels.length ? 'done'
+                 : doneCount > 0 ? 'partial'
+                 : 'open';
+    const stars = '★'.repeat(doneCount) + '☆'.repeat(levels.length - doneCount);
+    return { name: skill.name, type: 'skill', status, stars };
   }
   return {
     name: yaml.title,
@@ -141,7 +153,7 @@ function yamlToTree(yaml) {
 async function init() {
   let data;
   try {
-    const resp = await fetch('curriculum.yaml');
+    const resp = await fetch('skill_tree.yaml');
     if (!resp.ok) throw new Error(resp.statusText);
     data = yamlToTree(jsyaml.load(await resp.text()));
   } catch (e) {
@@ -236,6 +248,15 @@ async function init() {
     .attr('x', d => (d.data.type === 'root' || !d.children) ? r(d) + 6 : -(r(d) + 6))
     .attr('text-anchor', d => (d.data.type === 'root' || !d.children) ? 'start' : 'end')
     .text(d => d.data.name);
+
+  // Bloom stars below skill labels
+  node.filter(d => d.data.type === 'skill')
+    .append('text')
+    .attr('class', 'bloom-stars')
+    .attr('dy', '1.5em')
+    .attr('x', d => !d.children ? r(d) + 6 : -(r(d) + 6))
+    .attr('text-anchor', d => !d.children ? 'start' : 'end')
+    .text(d => d.data.stars);
 }
 
 init();
