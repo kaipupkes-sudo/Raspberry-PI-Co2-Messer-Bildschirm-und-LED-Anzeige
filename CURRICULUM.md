@@ -313,7 +313,7 @@ Am Ende des Kurses können die Lernenden:
 ---
 
 ### 7 Module & Bibliotheken
-
+<!-- TODO: venvs mit dazu  -->
 #### 7.1 Grundlagen
 
 ##### 7.1.1 import, from … import
