@@ -105,11 +105,11 @@ topics:
     skills:
       - id: "2.1.1"
         name: GPIO-Pins — Input und Output
-        self_rating: null
+        self_rating: "sitzt"
         bloom:
           erinnern:
-            done: false
-            completed_at: null
+            done: true
+            completed_at: "2026-03-13"
           verstehen:
             done: false
             completed_at: null
@@ -145,14 +145,14 @@ topics:
 
       - id: "2.1.3"
         name: Taster einlesen
-        self_rating: null
+        self_rating: "sitzt"
         bloom:
           erinnern:
-            done: false
-            completed_at: null
+            done: true
+            completed_at: "2026-03-13"
           verstehen:
-            done: false
-            completed_at: null
+            done: true
+            completed_at: "2026-03-13"
           anwenden:
             done: false
             completed_at: null

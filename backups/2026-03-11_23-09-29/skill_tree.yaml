@@ -8,7 +8,7 @@ topics:
         self_rating: null
         bloom:
           erinnern:
-            done: false
+            done: true
             completed_at: null
           verstehen:
             done: false
