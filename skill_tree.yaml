@@ -570,11 +570,11 @@ topics:
     skills:
       - id: "7.1.1"
         name: import, from … import
-        self_rating: null
+        self_rating: "sitzt"
         bloom:
           erinnern:
-            done: false
-            completed_at: null
+            done: true
+            completed_at: "2026-03-16"
           verstehen:
             done: false
             completed_at: null

@@ -108,50 +108,12 @@ Die Struktur (Topics, Skill-IDs, Bloom-Stufen) bleibt identisch — nur die Fort
 
 ### Schritt 5 — GLOSSAR.md zurücksetzen
 
-Schreibe `GLOSSAR.md` mit dieser leeren Vorlage — alle Themengebiete entsprechen den Blöcken aus `CURRICULUM.md`, Einträge werden geleert:
+Schreibe `GLOSSAR.md` vollständig leer — nur Titel und Hinweiszeile, keine vorgefertigten Abschnitte:
 
 ```markdown
 # Glossar
 
 > Wird automatisch gepflegt — neue Begriffe werden ergänzt wenn sie im Unterricht fallen oder ein Azubi nach einer Erklärung fragt.
-
----
-
-## 1 Kontrollstrukturen
-
-*(noch keine Einträge)*
-
-## 2 Hardware & GPIO — Grundlagen
-
-*(noch keine Einträge)*
-
-## 3 Daten & Variablen
-
-*(noch keine Einträge)*
-
-## 4 Funktionen
-
-*(noch keine Einträge)*
-
-## 5 Datenstrukturen
-
-*(noch keine Einträge)*
-
-## 6 Fehlerbehandlung
-
-*(noch keine Einträge)*
-
-## 7 Module & Bibliotheken
-
-*(noch keine Einträge)*
-
-## 8 Hardware & GPIO — Erweitert
-
-*(noch keine Einträge)*
-
-## 9 Objektorientierte Programmierung
-
-*(noch keine Einträge)*
 ```
 
 ---

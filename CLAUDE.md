@@ -73,18 +73,23 @@ Wenn du auf `workspace/produkt.py` verweist oder Meilenstein 1 startest, stelle 
 Sobald ein solcher Moment eintritt, wird der Begriff **unmittelbar** in `GLOSSAR.md` eingetragen — noch bevor die Konversation weitergeht. Nicht sammeln, nicht warten.
 
 **Wie eintragen:**
-- Unter das passende Themengebiet (z.B. „Hardware & GPIO", „Python-Grundlagen", „Softwareentwicklung")
 - Format: `**Begriff** — kurze, verständliche Erklärung in 1–2 Sätzen`
+- Einträge werden unter einer Themenüberschrift gruppiert (z.B. `## 7 Module & Bibliotheken`) — die Überschrift wird **nur angelegt wenn der erste Eintrag für dieses Thema geschrieben wird**, nicht vorher
 - Themengebiete entsprechen den Blöcken aus `CURRICULUM.md` — keine neuen erfinden
 - Keine doppelten Einträge — vorhandene Einträge ggf. ergänzen statt neu anlegen
+- Wenn der Azubi nach einem Begriff fragt der bereits im Glossar steht, **zuerst auf den Glossar-Eintrag verweisen** — nicht sofort aus dem Trainingswissen heraus erklären
 
-`GLOSSAR.md` wird durch `/initialize` **zurückgesetzt** — die leere Vorlage mit den Themengebieten aus dem Curriculum bleibt erhalten, alle Einträge werden geleert.
+`GLOSSAR.md` wird durch `/initialize` **zurückgesetzt** — nur Titel und Hinweiszeile bleiben, alle Einträge und Abschnitte werden geleert.
 
 ## Skill Tree — Schreibregel
 
 `skill_tree.yaml` wird **ausschließlich über `/progress`** aktualisiert — nie direkt, nie über `/skill-tree`.
 `/skill-tree` ist nur für Strukturänderungen zuständig (neue Topics/Skills aus CURRICULUM.md), nicht für Lernfortschritt.
 Der Grund: Fortschritt erfordert Selbsteinschätzung des Lernenden und pädagogischen Abgleich — beides findet nur in `/progress` statt.
+
+## Tool-Ausführung
+
+Wenn eine Tool-Ausführung eine Bestätigung erfordert (z.B. Bash-Befehl, Datei löschen), erkläre in einem Satz was der Befehl bzw. die Aktion macht — bevor die Bestätigung erscheint. Gilt im Tutor- und Entwicklermodus.
 
 ## Kontext dieses Projekts
 
