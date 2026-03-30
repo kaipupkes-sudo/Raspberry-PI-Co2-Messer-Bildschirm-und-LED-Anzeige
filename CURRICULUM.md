@@ -119,6 +119,7 @@ Bevor etwas erweitert wird, muss man verstehen was da ist — und was daran prob
 **Bezug zum Curriculum:**
 - `1.2.2` while True — bewusstes Pattern verstehen
 - `3.1.1` Zuweisung, Benennung, Konventionen — sprechende Konstantennamen
+- `4.3.3` Inline-Kommentare — Schnittstellenkommentare ergänzen
 - `6.1.1` try / except / finally — GPIO-Cleanup absichern
 - `7.1.1` import — Imports strukturieren
 
@@ -182,8 +183,11 @@ Das System soll nicht mehr nur leuchten — es soll warnen, schalten, handeln.
 **Bezug zum Curriculum:**
 - `1.1.1` if / elif / else — Aktorsteuerung nach Zustand
 - `2.1.1` GPIO Output — Aktor ansteuern
+- `2.1.4` Buzzer ansteuern — Alarm-Aktor implementieren
+- `2.1.5` Relais — externe Last schalten
 - `6.1.1` try / except / finally — Fehler bei HTTP-Request abfangen
 - `7.3.1` pip — externes Paket `requests` installieren
+- `7.3.4` HTTP-Anfragen mit requests — Benachrichtigung bei Grenzwertüberschreitung senden
 
 ---
 
@@ -206,8 +210,11 @@ Das ist die funktionale Vollständigkeit: Alles läuft, alles reagiert korrekt a
 - `1.2.2` while True — Dauerbetrieb
 - `5.2.1` Dictionaries — Konfiguration der Grenzwerte
 - `6.1.1` try / except / finally — robuste Fehlerbehandlung
-- `7.3.1` pip / `7.3.2` venv — Abhängigkeiten sauber verwalten
+- `7.3.1` pip — Abhängigkeiten installieren
+- `7.3.2` requirements.txt — Abhängigkeiten dokumentieren
+- `7.3.3` venv — Abhängigkeiten sauber isolieren
 - `8.1.2` Sensorwerte verarbeiten
+- `8.2.4` Display ansteuern — Messwerte ausgeben
 
 ---
 
@@ -244,7 +251,9 @@ Das ist der Qualitätssprung: Von „es funktioniert" zu „jemand anderes kann 
 **Bezug zum Curriculum:**
 - `4.1.1` Funktionen — sinnvolle Aufteilung
 - `4.3.2` Docstrings — Methoden beschreiben
+- `4.3.3` Inline-Kommentare — nicht-offensichtliche Stellen erklären
 - `7.1.1` import — eigene Module einbinden
+- `7.3.2` requirements.txt — Abhängigkeiten pflegen
 - `9.1.1` Klasse definieren, Objekt erstellen
 - `9.1.2` Attribute und Methoden
 - `9.2.1` Vererbung — gemeinsame Basisklasse für Sensoren / Aktoren
@@ -364,6 +373,22 @@ Am Ende des Kurses können die Lernenden:
 - **Analysieren** — Erklärt den Unterschied zwischen gedrückt/losgelassen in HIGH/LOW-Logik bei Pull-up vs. Pull-down
 - **Bewerten** — Wählt zwischen internem (Software-) und externem Pull-up/Pull-down je nach Anwendungsfall
 
+##### 2.1.4 Buzzer ansteuern
+
+- **Erinnern** — Kennt den Unterschied zwischen aktivem und passivem Buzzer und nennt je ein Einsatzbeispiel
+- **Verstehen** — Erklärt warum ein aktiver Buzzer mit einem einfachen HIGH-Signal aktiviert wird, während ein passiver Buzzer ein PWM-Signal benötigt
+- **Anwenden** — Schreibt ein Python-Programm das einen Buzzer bei Grenzwertüberschreitung aktiviert und danach wieder deaktiviert
+- **Analysieren** — Begründet warum der Buzzer im `finally`-Block deaktiviert werden sollte um Dauerpiepen bei Programmabbruch zu verhindern
+- **Bewerten** — Entscheidet wann ein Buzzer gegenüber einer LED als Alarm-Aktor geeigneter ist und begründet das
+
+##### 2.1.5 Relais
+
+- **Erinnern** — Kennt die Grundfunktion eines Relais und nennt Anwendungsbeispiele (z.B. externe Last mit höherer Spannung schalten)
+- **Verstehen** — Erklärt warum ein Relais zur galvanischen Trennung zwischen Steuerkreis (GPIO) und Lastkreis (externe Spannung) eingesetzt wird
+- **Anwenden** — Schließt ein Relaismodul korrekt an einen GPIO-Pin an und schaltet es über Python
+- **Analysieren** — Begründet warum eine Freilaufdiode und die Einhaltung von Spannungs- und Stromgrenzen bei Relais sicherheitskritisch sind
+- **Bewerten** — Entscheidet wann ein Relais gegenüber einer direkten GPIO-Schaltung notwendig ist
+
 ---
 
 ### 3 Daten & Variablen
@@ -469,6 +494,13 @@ Am Ende des Kurses können die Lernenden:
 - **Verstehen** — Erklärt warum Docstrings für die Wartbarkeit und Zusammenarbeit wichtig sind
 - **Anwenden** — Schreibt Docstrings für eigene Funktionen die Zweck, Parameter und Rückgabewert beschreiben
 - **Bewerten** — Beurteilt ob ein vorhandener Docstring ausreichend und korrekt ist
+
+##### 4.3.3 Inline-Kommentare
+
+- **Erinnern** — Kennt die Syntax eines Inline-Kommentars in Python (`#`) und weiß an welcher Stelle er im Code steht
+- **Verstehen** — Erklärt den Unterschied zwischen einem Docstring (was eine Funktion tut) und einem Inline-Kommentar (warum eine konkrete Zeile oder ein Abschnitt so umgesetzt ist)
+- **Anwenden** — Ergänzt sinnvolle Inline-Kommentare in bestehendem Code an nicht selbsterklärenden Stellen (z.B. GPIO-Cleanup, Grenzwertprüfung)
+- **Bewerten** — Beurteilt ob ein Kommentar das „Warum" erklärt oder nur das „Was" wiederholt — und entscheidet ob er damit hilfreich oder überflüssig ist
 
 ---
 
@@ -610,6 +642,14 @@ Am Ende des Kurses können die Lernenden:
 - **Analysieren** — Erkennt warum ein Paket das global installiert wurde in einer venv nicht verfügbar ist und umgekehrt
 - **Bewerten** — Entscheidet wann eine virtuelle Umgebung sinnvoll ist und dokumentiert Abhängigkeiten korrekt in `requirements.txt`
 
+##### 7.3.4 HTTP-Anfragen mit requests
+
+- **Erinnern** — Kennt die Funktionen `requests.get()` und `requests.post()` und weiß wozu die `requests`-Bibliothek eingesetzt wird
+- **Verstehen** — Erklärt was eine HTTP-Anfrage ist, was ein Statuscode bedeutet und wie `requests` den Versand gegenüber der Standardbibliothek vereinfacht
+- **Anwenden** — Sendet eine HTTP-POST-Benachrichtigung mit `requests.post()` wenn ein Grenzwert überschritten wird
+- **Analysieren** — Erkennt warum HTTP-Anfragen mit `try/except` abgesichert werden sollten (z.B. fehlende Netzwerkverbindung, Timeout)
+- **Bewerten** — Entscheidet wann eine HTTP-Benachrichtigung gegenüber anderen Alarmarten (LED, Buzzer) sinnvoll ist und begründet das
+
 ---
 
 ### 8 Hardware & GPIO — Erweitert
@@ -653,6 +693,14 @@ Am Ende des Kurses können die Lernenden:
 - **Erinnern** — Kennt die grundlegenden Eigenschaften von UART (TX/RX, Baudrate, kein Takt)
 - **Verstehen** — Erklärt wann serieller Datenaustausch über UART sinnvoll ist
 - **Anwenden** — Sendet und empfängt Daten über UART im Python-Programm mit `pyserial`
+
+##### 8.2.4 Display ansteuern
+
+- **Erinnern** — Kennt typische Display-Typen im Raspberry-Pi-Umfeld (z.B. OLED, LCD) und ihre übliche Kommunikationsschnittstelle (I²C)
+- **Verstehen** — Erklärt wie Messwerte strukturiert und lesbar auf einem Display ausgegeben werden können (Zeilenaufteilung, Einheiten)
+- **Anwenden** — Gibt Sensorwerte (CO₂, Temperatur, Luftfeuchtigkeit) formatiert auf einem I²C-Display aus
+- **Analysieren** — Erkennt warum die Aktualisierungsrate der Anzeige auf die Messrate abgestimmt sein sollte um unnötige Schreibzugriffe zu vermeiden
+- **Bewerten** — Entscheidet welche Informationen auf dem Display sinnvoll angezeigt werden und wie sie übersichtlich angeordnet sind
 
 #### 8.3 GPIO-Bibliotheken
 
