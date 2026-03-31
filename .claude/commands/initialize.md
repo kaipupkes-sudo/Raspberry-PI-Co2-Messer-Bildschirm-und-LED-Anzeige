@@ -113,7 +113,7 @@ Schreibe `GLOSSAR.md` vollständig leer — nur Titel und Hinweiszeile, keine vo
 ```markdown
 # Glossar
 
-> Wird automatisch gepflegt — neue Begriffe werden ergänzt wenn sie im Unterricht fallen oder ein Azubi nach einer Erklärung fragt.
+> Wird automatisch gepflegt — neue Begriffe werden ergänzt wenn sie im Lernprozess fallen oder ein Lernender nach einer Erklärung fragt.
 ```
 
 ---
