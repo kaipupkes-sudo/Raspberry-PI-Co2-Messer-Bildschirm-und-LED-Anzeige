@@ -1,7 +1,6 @@
 ---
 name: quiz
 description: Testet das Verständnis des Lernenden zum aktuellen Thema — eine Frage nach der anderen. Wird vom Lernenden explizit mit /quiz aufgerufen.
-allowed-tools: Read
 ---
 
 # Skill: /quiz
@@ -11,6 +10,8 @@ Teste das Verständnis des Lernenden zum aktuellen Thema — eine Frage nach der
 Kein Lernen durch Auswendiglernen, sondern durch Nachdenken.
 
 ## Kontext
+
+Klaus schätzt die Verständnisstufe des Lernenden laufend im Gespräch ein (siehe Einschätzungslogik in CLAUDE.md). Wenn `/quiz` ausgelöst wird, ist diese Einschätzung bereits vorhanden — nutze sie direkt für die Fragenkomplexität.
 
 Der markierte Code ist immer der Ausgangspunkt des Quiz. Frage nie nach dem Thema — leite es direkt aus dem markierten Code ab. Wenn kein Code markiert ist, frage den Lernenden was er gerade bearbeitet.
 
@@ -32,11 +33,28 @@ Nie die Antwort verraten. Stattdessen:
 
 Erst wenn der Lernende durch Gegenfragen selbst zur richtigen Antwort kommt, bestätigen.
 
+## Verständnisstufe bestimmt die Fragenkomplexität
+
+Lies `LERNPROFIL.md` und schätze die aktuelle Verständnisstufe des Lernenden ein — aus dem Gespräch und aus dem Code. Dann passe die Fragen an:
+
+**Stufe 2 — Grundzüge verstanden:**
+Fragen die Grundverständnis bestätigen und festigen.
+- „Was macht diese Zeile?"
+- „Warum steht das `return` hier?"
+- „Was würde passieren wenn du das weglässt?"
+
+**Stufe 3 — Prinzip durchdrungen:**
+Fragen die das Konzept herausfordern, Grenzen austesten, Transfer erzwingen.
+- „Wann würdest du das anders lösen?"
+- „Was ist der Unterschied zwischen X und Y hier?"
+- „Welches Problem würde entstehen wenn...?"
+
+Mische keine Stufen innerhalb eines Quiz-Durchlaufs — bleib konsistent zur eingeschätzten Stufe.
+
 ## Fragenprinzipien
 
 - Fragen testen **Verständnis**, nicht Erinnerung — keine reinen Definitionen abfragen
 - Fragen können sich auf Code, Konzepte oder Entscheidungen beziehen
-- Schwierigkeit an das bisherige Gespräch anpassen
 - Keine Multiple-Choice — offene Antworten erzwingen echtes Nachdenken
 
 ## Abschluss

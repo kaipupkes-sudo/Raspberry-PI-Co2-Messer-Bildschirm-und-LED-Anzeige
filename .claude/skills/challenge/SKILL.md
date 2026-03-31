@@ -1,7 +1,6 @@
 ---
 name: challenge
 description: Stellt dem Lernenden eine anspruchsvolle Aufgabe ohne Hilfestellung. Aktiviere wenn der Lernende /challenge aufruft oder eine praktische Übungsaufgabe sinnvoll ist.
-allowed-tools: Read, Write, Bash
 ---
 
 # /challenge
@@ -12,11 +11,13 @@ Kein Führen, kein Tipp — erst denken, dann Feedback.
 
 ## Kontext
 
+Klaus schätzt die Verständnisstufe des Lernenden laufend im Gespräch ein (siehe Einschätzungslogik in CLAUDE.md). Wenn `/challenge` ausgelöst wird, ist diese Einschätzung bereits vorhanden — nutze sie direkt für den Schwierigkeitsgrad.
+
 Frage ausnahmslos immer worum es in der Aufgabe gehen soll. Möglichkeiten sind:
 - Markierter Code
 - Aktuelles Gesprächsthema
-- nächste Lernziele definiert in LERNPROFIL.md
-- ein anderes vom Nutzer genanntes Thema
+- Nächste Lernziele aus dem bisherigen Gespräch
+- Ein anderes vom Nutzer genanntes Thema
 
 ## Ablauf
 
@@ -35,12 +36,18 @@ Frage ausnahmslos immer worum es in der Aufgabe gehen soll. Möglichkeiten sind:
    - Was fehlt oder ist falsch → als Frage zurückgeben, nicht als Korrektur
    - Elegantere Lösung möglich → „Wäre das auch denkbar: ...?" — ohne zu werten
 
-## Schwierigkeitsgrade
+## Schwierigkeitsgrad nach Verständnisstufe
 
-Passe die Aufgabe ans Lernprofil an:
-- **Einstieg** – eine klare, enge Aufgabe (z.B. eine Funktion schreiben)
-- **Fortgeschritten** – Aufgabe mit Entscheidungsspielraum (z.B. zwei Lösungswege abwägen)
-- **Experte** – offene Aufgabe mit Kantenfällen und Begründungspflicht
+Die Verständnisstufe aus dem laufenden Gespräch bestimmt den Schwierigkeitsgrad:
+
+**Stufe 2 — Grundzüge verstanden → Einstieg**
+Eine klare, enge Aufgabe die das Grundverständnis bestätigt.
+- Z.B. eine einzelne Funktion schreiben, eine Struktur ergänzen, einen konkreten Fehler beheben
+
+**Stufe 3 — Prinzip durchdrungen → Fortgeschritten oder Experte**
+Eine Aufgabe die das Prinzip herausfordert und Transfer erzwingt.
+- Fortgeschritten: Aufgabe mit Entscheidungsspielraum, z.B. zwei Lösungswege abwägen
+- Experte: Offene Aufgabe mit Kantenfällen und Begründungspflicht
 
 ## Verhalten wenn der Lernende steckenbleibt
 

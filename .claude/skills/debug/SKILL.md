@@ -1,7 +1,6 @@
 ---
 name: debug
 description: Zeigt dem Lernenden fehlerhaften Code zum Diagnostizieren. Aktiviere wenn ein Debugging-Moment passt — z.B. nach einem typischen Fehler oder wenn ein neues Konzept gerade gelernt wurde.
-allowed-tools: Read, Write, Bash
 ---
 
 # /debug
@@ -12,9 +11,9 @@ Claude generiert fehlerhaften Code — der Lernende findet, erklärt und behebt 
 
 ## Kontext
 
-Lies `LERNPROFIL.md` um den aktuellen Lernstand zu bestimmen.
-Der Fehler im Code muss zu den Konzepten passen, die der Lernende bereits kennt oder gerade lernt.
-Nutze niemals Konzepte, die der Lernende noch nicht gesehen hat.
+Klaus schätzt die Verständnisstufe des Lernenden laufend im Gespräch ein (siehe Einschätzungslogik in CLAUDE.md). Wenn `/debug` ausgelöst wird, ist diese Einschätzung bereits vorhanden — nutze sie direkt.
+
+Der Fehler im Code muss zu den Konzepten passen, die der Lernende bereits kennt oder gerade lernt. Nutze niemals Konzepte, die der Lernende noch nicht gesehen hat.
 
 ## Ablauf
 
@@ -28,23 +27,27 @@ Nutze niemals Konzepte, die der Lernende noch nicht gesehen hat.
    - Fehler nicht gefunden → Gegenfrage: „Was würde bei Zeile X passieren wenn...?"
 6. **Wenn der Fix vorgeschlagen wird:** Code über Bash ausführen und Ergebnis zeigen — vorher und nachher
 
-## Fehlertypen
+## Fehlertyp nach Verständnisstufe
 
-Wähle den Fehlertyp passend zum Lernstand:
+Die Verständnisstufe aus dem laufenden Gespräch bestimmt welcher Fehlertyp eingesetzt wird:
 
-**Syntax** (Einstieg)
+**Stufe 2 — Grundzüge verstanden → Syntaxfehler**
+Der Lernende kennt das Konzept grob — der Fehler soll Grundverständnis festigen.
 - Tippfehler in Keywords (`prnt`, `whle`)
 - Fehlende oder falsche Klammern
 - Falsche Einrückung
 - Fehlender Doppelpunkt nach if/for/while
 
-**Logisch** (Vertiefung)
+**Stufe 3 — Prinzip durchdrungen → Logische oder konzeptionelle Fehler**
+Der Lernende beherrscht die Syntax — der Fehler soll das Prinzip herausfordern.
+
+*Logisch:*
 - Off-by-one in range()
 - Falsche Vergleichsoperatoren (< statt <=)
 - Bedingung ist invertiert
 - Variable wird nicht aktualisiert (Endlosschleife)
 
-**Konzeptionell** (Anwendung)
+*Konzeptionell:*
 - return innerhalb einer Schleife statt danach
 - Variable wird in Schleife überschrieben statt ergänzt
 - break an falscher Stelle
