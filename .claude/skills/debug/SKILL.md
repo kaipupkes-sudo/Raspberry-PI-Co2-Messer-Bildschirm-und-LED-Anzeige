@@ -1,6 +1,6 @@
 ---
 name: debug
-description: Zeigt dem Lernenden fehlerhaften Code zum Diagnostizieren. Aktiviere wenn ein Debugging-Moment passt — z.B. nach einem typischen Fehler oder wenn ein neues Konzept gerade gelernt wurde.
+description: Zeigt dem Lernenden fehlerhaften Code zum Diagnostizieren — für das Trainieren von Code-Lesen und Fehleranalyse.
 ---
 
 # /debug

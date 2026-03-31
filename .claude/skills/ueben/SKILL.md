@@ -1,6 +1,6 @@
 ---
 name: üben
-description: Gibt dem Lernenden eine Übungsaufgabe zum aktuellen Thema — gleiche Komplexität, ähnlicher Kontext. Aktiviere wenn der Lernende /üben aufruft oder Wissen festigen sinnvoll ist.
+description: Gibt dem Lernenden eine Übungsaufgabe zum aktuellen Thema — gleiche Komplexität, ähnlicher Kontext, für Festigung.
 user-invocable: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: quiz
-description: Testet das Verständnis des Lernenden zum aktuellen Thema — eine Frage nach der anderen. Wird vom Lernenden explizit mit /quiz aufgerufen.
+description: Testet das Verständnis des Lernenden zum aktuellen Thema — eine Frage nach der anderen.
 ---
 
 # Skill: /quiz
@@ -8,6 +8,12 @@ description: Testet das Verständnis des Lernenden zum aktuellen Thema — eine 
 ## Zweck
 Teste das Verständnis des Lernenden zum aktuellen Thema — eine Frage nach der anderen.  
 Kein Lernen durch Auswendiglernen, sondern durch Nachdenken.
+
+## Abgrenzung
+
+- **Nicht /üben** — kein Produzieren von Code oder Strukturen, sondern Verständnis durch Fragen prüfen
+- **Nicht /challenge** — kein Anspruch auf eigenständige Konstruktion, sondern geleitetes Abfragen
+- **Nicht /debug** — kein Fehler finden, sondern Konzepte und Entscheidungen erklären
 
 ## Kontext
 
