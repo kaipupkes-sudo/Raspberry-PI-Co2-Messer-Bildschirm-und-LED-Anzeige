@@ -218,49 +218,6 @@ Das ist die funktionale Vollständigkeit: Alles läuft, alles reagiert korrekt a
 
 ---
 
-## Meilenstein 6 — Refactoring
-
-**Ziel:** Den funktionierenden Code sauber, wartbar und objektorientiert umstrukturieren.
-
-Das ist der Qualitätssprung: Von „es funktioniert" zu „jemand anderes kann es verstehen und weiterentwickeln".
-
-**Unterpunkte:**
-
-### 5a — Code in mehrere Dateien auslagern
-- Sensorlogik, Aktorlogik und Hauptprogramm trennen
-- Module importieren statt alles in eine Datei zu packen
-
-### 5b — Kommentare und Docstrings
-- Alle Funktionen und Klassen mit Docstrings versehen
-- Nicht-offensichtliche Stellen mit Inline-Kommentaren erklären
-
-### 5c — Code Smells beseitigen
-- Doppelten Code identifizieren und zusammenfassen
-- Magic Numbers durch benannte Konstanten oder Dictionary-Einträge ersetzen
-- Funktionen die zu viel tun aufteilen
-
-### 5d — Objektorientierte Umstrukturierung
-- Sensor-Klassen erstellen (z.B. `CO2Sensor`, `DHT22Sensor`)
-- Aktor-Klassen erstellen (z.B. `LEDController`, `Buzzer`)
-- Hauptprogramm orchestriert nur noch Objekte
-
-### 5e — Dokumentation
-- `requirements.txt` pflegen
-- README oder Übergabedokument erstellen
-
-**Bezug zum Curriculum:**
-- `4.1.1` Funktionen — sinnvolle Aufteilung
-- `4.3.2` Docstrings — Methoden beschreiben
-- `4.3.3` Inline-Kommentare — nicht-offensichtliche Stellen erklären
-- `7.1.1` import — eigene Module einbinden
-- `7.3.2` requirements.txt — Abhängigkeiten pflegen
-- `9.1.1` Klasse definieren, Objekt erstellen
-- `9.1.2` Attribute und Methoden
-- `9.2.1` Vererbung — gemeinsame Basisklasse für Sensoren / Aktoren
-- `9.3.1` Refactoring: prozedural → OOP
-
----
-
 *Meilensteine spiegeln den Projektfortschritt — kein Meilenstein muss perfekt sein, bevor der nächste beginnt.*
 
 ---
@@ -282,10 +239,6 @@ Am Ende des Kurses können die Lernenden:
 - Kontrollstrukturen, Funktionen und Datenstrukturen situationsgerecht einsetzen
 - Eigene Lösungsansätze begründen und mit alternativen Ansätzen vergleichen
 - Code lesbar, wartbar und sinnvoll strukturiert schreiben
-- Eigene Klassen definieren und bestehenden Code objektorientiert umstrukturieren
-
-> **TODO:** Neues Lernziel ergänzt (OOP) — bitte prüfen ob das zur Lerngruppe passt
-
 ### Hinweise für die Lehrkraft
 
 [Pädagogische Hinweise, Besonderheiten der Lerngruppe, Differenzierung]
@@ -594,7 +547,7 @@ Am Ende des Kurses können die Lernenden:
 ---
 
 ### 7 Module & Bibliotheken
-<!-- TODO: venvs mit dazu  -->
+
 #### 7.1 Grundlagen
 
 ##### 7.1.1 import, from … import
@@ -624,8 +577,6 @@ Am Ende des Kurses können die Lernenden:
 
 ##### 7.3.2 requirements.txt
 
-> **TODO:** Neu ergänzt — passt gut zum Projektabschluss und zur Übergabe an den Hersteller; prüfen ob der Zeitpunkt im Kurs gut gewählt ist
-
 - **Erinnern** — Kennt das Format einer `requirements.txt` und weiß wozu sie dient
 - **Verstehen** — Erklärt warum eine `requirements.txt` die Reproduzierbarkeit eines Projekts sicherstellt und was ohne sie bei der Weitergabe passieren kann
 - **Anwenden** — Erstellt eine `requirements.txt` manuell oder mit `pip freeze > requirements.txt` und installiert Abhängigkeiten mit `pip install -r requirements.txt`
@@ -633,8 +584,6 @@ Am Ende des Kurses können die Lernenden:
 - **Bewerten** — Beurteilt ob eine gegebene `requirements.txt` vollständig und sinnvoll gepflegt ist
 
 ##### 7.3.3 Virtuelle Umgebungen (venv)
-
-> **TODO:** Neu ergänzt — prüfen ob venvs im Kontext Raspberry Pi / Blockunterricht sinnvoll eingesetzt werden können (ggf. nur als Konzept einführen)
 
 - **Erinnern** — Kennt den Befehl `python -m venv` und weiß wozu eine virtuelle Umgebung dient
 - **Verstehen** — Erklärt warum venvs Paket-Konflikte zwischen Projekten verhindern und warum globale pip-Installationen problematisch sein können
@@ -714,8 +663,6 @@ Am Ende des Kurses können die Lernenden:
 ---
 
 ### 9 Objektorientierte Programmierung
-
-> **TODO:** Gesamter Block neu — bitte Umfang, Tiefe und Reihenfolge im Team abstimmen
 
 > Setzt Grundlagen aus Funktionen (Block 4) voraus. Ziel ist das Refactoring von prozeduralem Code in eine wartbare Klassenstruktur — direkt angebunden an das Projektprojekt.
 
