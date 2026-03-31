@@ -1,52 +1,62 @@
-# Willkommen beim IIoT-Lernbegleiter
+# IIoT-Lernbegleiter
 
-Du bist hier, weil dein Ausbildungsbetrieb einen Auftrag bekommen hat.
-
-Ein Hardware-Hersteller braucht Hilfe: Sein Produkt — ein Raspberry Pi, der auf Knopfdruck eine LED zum Leuchten bringt — soll zu einem vollwertigen **CO₂- und Raumklima-Monitor** ausgebaut werden. Das Problem: Der verantwortliche Chefentwickler hat das Unternehmen mitten im Projekt verlassen. Der hinterlassene Code ist eine einzige, unkommentierte Datei — niemand beim Hersteller kann sie noch nachvollziehen.
-
-Deine Aufgabe ist es, diesen Code zu verstehen, aufzuräumen und Schritt für Schritt zu erweitern — bis am Ende ein vollständiges System mit Sensoren, Aktoren und automatischer Benachrichtigung steht.
+Ein experimentelles Lernumgebungs-Setting für Claude Code — entwickelt an der TUHH.
 
 ---
 
-## Dein Ausbilder: Klaus
+## Konzept
 
-Du arbeitest nicht allein. **Klaus** begleitet dich durch das Projekt — als KI-gestützter Ausbilder, der direkt in deiner Entwicklungsumgebung läuft.
+Dieses Projekt nutzt Claude Code als strukturierten Lernbegleiter für Auszubildende. Claude agiert als Ausbilder ("Klaus") und führt Lernende durch ein praxisnahes IIoT-Projekt auf einem Raspberry Pi — vom ersten Codeabschnitt bis zum fertigen CO₂- und Raumklima-Monitor.
 
-Klaus liefert dir keine fertigen Lösungen. Er stellt Fragen, erklärt Zusammenhänge und führt dich dahin, dass du selbst auf die Antworten kommst. Das ist kein Fehler des Systems — es ist der Punkt.
-
-Schreib Klaus einfach an, wenn du eine Frage hast, nicht weiterkommst oder etwas nicht verstehst.
+Die Pädagogik ist in `CLAUDE.md` definiert: kein Lösungslieferant, sondern ein Tutor der mit Fragen führt, Verständnis aufbaut und Lernfortschritt dokumentiert.
 
 ---
 
-## Dein Arbeitsbereich
+## Projektrahmen
 
-Deine Skripte und Dateien liegen im Ordner `workspace/`. Dort findest du zu Beginn `produkt.py` — den Code des Herstellers. Das ist dein Ausgangspunkt.
+Ein Hardware-Hersteller hat einen Raspberry Pi im Einsatz, der auf Knopfdruck eine LED schaltet. Der verantwortliche Entwickler hat das Unternehmen verlassen — der hinterlassene Code ist unkommentiert und nicht wartbar. Auszubildende übernehmen den Auftrag: Code analysieren, aufräumen und schrittweise zu einem vollständigen Raumklima-Monitor ausbauen.
 
-Klaus pflegt außerdem automatisch ein **Glossar** (`GLOSSAR.md`): Jeder Fachbegriff der im Gespräch fällt, wird dort erklärt eingetragen. Wenn du einen Begriff nicht kennst, lohnt sich ein Blick dorthin.
+Der Ausgangscode liegt in `workspace/produkt.py`.
 
 ---
 
-## Commands
+## Struktur
 
-Diese Commands kannst du jederzeit aufrufen — schreib sie einfach in den Chat:
-
-| Command | Was passiert |
+| Datei / Ordner | Inhalt |
 |---|---|
-| `/quiz` | Klaus stellt dir Fragen zum aktuellen Thema — eine nach der anderen. Testet dein Verständnis, ohne zu prüfen. |
-| `/üben` | Du bekommst eine praktische Aufgabe auf dem Niveau wo du gerade stehst. Kein Sprung nach oben — Sicherheit aufbauen. |
-| `/challenge` | Eine anspruchsvollere Aufgabe ohne Hilfestellung. Für wenn du bereit bist, dich zu strecken. |
-| `/debug` | Klaus zeigt dir fehlerhaften Code. Du findest, erklärst und behebst den Fehler. |
-| `/tipp` | Wenn du wirklich feststeckst, gibt's einen gezielten Hinweis — ohne die Lösung zu verraten. |
-| `/progress` | Dokumentiert was du in dieser Session gelernt hast. Ruf es am Ende jeder Session auf — sonst geht der Fortschritt verloren. |
-| `/continue` | Wenn du das Fenster geschlossen oder den Kontext verloren hast: Damit steigen wir wieder ein. Klaus schaut sich an wo ihr aufgehört habt. |
+| `CLAUDE.md` | Verhaltens- und Pädagogikregeln für Claude |
+| `CURRICULUM.md` | Lerninhalte, Meilensteine, Bloom-Taxonomie |
+| `skill_tree.yaml` | Kompetenzstand des Lernenden (wird automatisch gepflegt) |
+| `LERNPROFIL.md` | Individueller Fortschritt und Lernziele |
+| `GLOSSAR.md` | Automatisch gepflegtes Fachbegriff-Glossar |
+| `workspace/` | Arbeitsbereich des Lernenden |
+| `aufgaben/` | Aufgaben die Klaus situativ einsetzen kann |
+| `skilltree.html` | Visuelle Darstellung des Kompetenzstands |
 
 ---
 
-## Meilensteine
+## Skills (Commands)
 
-Das Projekt ist in Meilensteine aufgeteilt — von der ersten Hardware-Inbetriebnahme bis zum fertigen Monitor. Sie stehen in `CURRICULUM.md` und dienen als Orientierung, nicht als starre Vorgabe.
+Lernende können folgende Commands im Chat aufrufen:
 
-Klaus begleitet dich durch die Meilensteine. Du bestimmst das Tempo.
+| Command | Funktion |
+|---|---|
+| `/quiz` | Verständnisfragen zum aktuellen Thema |
+| `/üben` | Praktische Aufgabe auf aktuellem Niveau |
+| `/challenge` | Anspruchsvolle Aufgabe ohne Hilfestellung |
+| `/debug` | Fehlerhaften Code analysieren und korrigieren |
+| `/tipp` | Gezielter Hinweis ohne Lösungsverraten |
+| `/progress` | Lernstand dokumentieren (LERNPROFIL + skill_tree) |
+| `/continue` | Wiedereinstieg nach geschlossenem Kontext |
+
+---
+
+## Technisches
+
+- Basiert auf Claude Code mit `CLAUDE.md` als Verhaltenssteuerung
+- Skills sind als Markdown-Dateien in `.claude/commands/` definiert
+- `skill_tree.yaml` wird von `skilltree.html` direkt beim Laden eingelesen
+- Lernfortschritt liegt ausschließlich lokal — keine externe Datenhaltung
 
 ---
 
