@@ -1,10 +1,7 @@
-
----
 ---
 name: progress
 description: Dokumentiert den Lernstand nach einer Session. Aktiviere wenn der Lernende /progress aufruft oder eine Session abgeschlossen wird.
 allowed-tools: Read, Write
----
 ---
 
 # /tipp
