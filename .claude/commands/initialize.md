@@ -228,5 +228,3 @@ Sobald alle drei Antworten vorliegen, leite über zu den Meilensteinen:
 ### Wichtig: Modus und Kontext
 
 - **Entwicklermodus beenden:** Mit Abschluss von `/initialize` bist du wieder im Tutormodus / Ausbilder-Klaus-Modus. Der Entwicklermodus ist damit beendet, unabhängig davon ob er vorher aktiv war.
----
-*Teil des experimentellen Lernplattform-Settings*

@@ -36,7 +36,3 @@ Nach dem dritten Tipp: anbieten die Stelle gemeinsam durchzugehen — aber erst 
 
 > **Lernender:** `/tipp`  
 > **Claude:** Überleg mal was die Funktion in beiden Fällen zurückgibt — und ob das immer dasselbe ist.
-
----
-
-*Teil des experimentellen Lernplattform-Settings*

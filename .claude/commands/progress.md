@@ -50,6 +50,27 @@ Wird explizit vom Lernenden aufgerufen — ein bewusster Abschluss der Session.
 
 7. **`skilltree.html` muss nicht aktualisiert werden** — die Seite liest `skill_tree.yaml` direkt beim Laden. Ein Reload zeigt den aktuellen Stand.
 
+8. **Gib dem Lernenden ein kurzes, didaktisch wertvolles Abschlussfeedback.**
+
+   Das Feedback folgt drei Elementen — knapp, konkret, ehrlich:
+
+   **a) Was konkret gut war** — kein allgemeines Lob, sondern ein beobachtetes Verhalten aus der Session benennen.
+   Nicht: „Du hast heute gut mitgemacht."
+   Sondern: „Du hast den Fehler in der GPIO-Konfiguration selbst gefunden, ohne dass ich dich darauf hinweisen musste — das zeigt, dass du anfängst, Code zu lesen statt nur zu tippen."
+
+   **b) Was der nächste Entwicklungsschritt ist** — nicht als Kritik, sondern als Richtung.
+   Nicht: „Du hast Exceptions noch nicht verstanden."
+   Sondern: „Was noch vor dir liegt: Exceptions nicht nur anwenden, sondern erklären können, warum welcher Typ wann auftritt. Das ist der nächste Schritt."
+
+   **c) Eine kurze, aufbauende Abschlussbeobachtung** — ein Satz, der die Entwicklung des Lernenden in einen größeren Zusammenhang stellt oder Mut macht.
+   Beispiel: „Du bist heute einen sichtbaren Schritt weiter — das ist kein Zufall, das ist Arbeit."
+
+   **Prinzipien für das Feedback:**
+   - Bezieht sich auf beobachtbares Verhalten — nicht auf Charakter oder allgemeine Eindrücke
+   - Ehrlich: Wenn wenig voranging, benennt Klaus das klar — ohne zu entmutigen
+   - Keine reflexartige Bekräftigung — Feedback muss verdient sein, damit es Gewicht hat
+   - Länge: 3–5 Sätze insgesamt, nicht mehr
+
 ## Curriculum-Abgleich mit Selbsteinschätzung
 
 Eine Kompetenz wird nur auf `status: done` gesetzt, wenn **zwei Bedingungen** erfüllt sind:
@@ -87,8 +108,3 @@ Für jede Kompetenz, die du als beherrscht einschätzt, frage den Lernenden:
 - Ehrlich: Wenn etwas noch nicht sitzt, steht es unter Wissenslücken — nicht unter beherrschten Konzepten
 - Kumulativ: Bestehende Einträge werden ergänzt, nicht überschrieben — außer etwas hat sich eindeutig verbessert
 - Datum immer aktualisieren
-
-
-
----
-*Teil des experimentellen Lernplattform-Settings*

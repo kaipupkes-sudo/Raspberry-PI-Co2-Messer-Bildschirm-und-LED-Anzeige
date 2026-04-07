@@ -78,7 +78,3 @@ Wenn der Lernende vorher abbricht: Auswertung trotzdem geben, auch wenn weniger 
 > **Claude:** Du hast gerade Funktionen kennengelernt. Hier eine Frage:  
 > Warum würde man Code in eine Funktion auslagern — auch wenn man ihn nur einmal braucht?  
 > *(Nimm dir einen Moment, bevor du antwortest.)*
-
----
-
-*Teil des experimentellen Lernplattform-Settings*

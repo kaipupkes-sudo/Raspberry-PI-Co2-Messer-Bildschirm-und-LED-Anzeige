@@ -96,6 +96,3 @@ Gib am Ende aus:
 - Anzahl Topics und Skills gesamt
 - Bei Update: X neu hinzugefügt, Y bereits vorhanden
 - Falls Skills in YAML aber nicht mehr im Curriculum: Liste diese auf
-
----
-*Teil des experimentellen Lernplattform-Settings*

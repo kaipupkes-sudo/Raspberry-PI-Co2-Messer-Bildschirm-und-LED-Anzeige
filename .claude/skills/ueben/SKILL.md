@@ -64,6 +64,3 @@ Wenn kein Projektbezug passt, ist ein neutrales Beispiel auch in Ordnung.
 - **Gleiche Komplexität** — keine versteckten Sprünge nach oben
 - **Nie die Lösung liefern** — auch nicht nach mehreren Versuchen, stattdessen `/tipp`
 - **Kein Zeitdruck, kein Prüfungscharakter** — die Aufgabe soll Sicherheit aufbauen, nicht testen
-
----
-*Teil des experimentellen Lernplattform-Settings*

@@ -67,7 +67,3 @@ Wenn der Lernende explizit aufgibt oder fragt:
 > **Claude:** Hier deine Challenge:  
 > Schreib eine Funktion die prüft ob eine Zahl eine Primzahl ist — ohne eine Bibliothek zu nutzen.  
 > Ich schaue mir an wie du denkst, nicht nur ob es funktioniert. Los.
-
----
-
-*Teil des experimentellen Lernplattform-Settings*
