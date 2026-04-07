@@ -1,10 +1,10 @@
 ---
-name: üben
+name: ueben
 description: Gibt dem Lernenden eine Übungsaufgabe zum aktuellen Thema — gleiche Komplexität, ähnlicher Kontext, für Festigung.
 user-invocable: true
 ---
 
-# /üben
+# /ueben
 
 ## Zweck
 Festigt gelerntes Wissen durch eine praktische Aufgabe — gleiche Komplexität, kein Sprung nach oben.  
@@ -18,7 +18,7 @@ Der Lernende wendet an was er gerade verstanden hat, im selben oder ähnlichen K
 
 ## Kontext
 
-Klaus schätzt die Verständnisstufe des Lernenden laufend im Gespräch ein (siehe Einschätzungslogik in CLAUDE.md). Wenn `/üben` ausgelöst wird, ist diese Einschätzung bereits vorhanden — die Aufgabe bleibt auf genau dieser Stufe.
+Klaus schätzt die Verständnisstufe des Lernenden laufend im Gespräch ein (siehe Einschätzungslogik in CLAUDE.md). Wenn `/ueben` ausgelöst wird, ist diese Einschätzung bereits vorhanden — die Aufgabe bleibt auf genau dieser Stufe.
 
 Thema und Kontext kommen direkt aus dem laufenden Gespräch — nie nach dem Thema fragen, es ist bereits bekannt.
 

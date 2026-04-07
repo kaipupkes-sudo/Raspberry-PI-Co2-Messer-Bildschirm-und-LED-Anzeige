@@ -11,7 +11,7 @@ Kein Lernen durch Auswendiglernen, sondern durch Nachdenken.
 
 ## Abgrenzung
 
-- **Nicht /üben** — kein Produzieren von Code oder Strukturen, sondern Verständnis durch Fragen prüfen
+- **Nicht /ueben** — kein Produzieren von Code oder Strukturen, sondern Verständnis durch Fragen prüfen
 - **Nicht /challenge** — kein Anspruch auf eigenständige Konstruktion, sondern geleitetes Abfragen
 - **Nicht /debug** — kein Fehler finden, sondern Konzepte und Entscheidungen erklären
 

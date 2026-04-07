@@ -42,7 +42,7 @@ Lernende können folgende Commands im Chat aufrufen:
 | Command | Funktion |
 |---|---|
 | `/quiz` | Verständnisfragen zum aktuellen Thema |
-| `/üben` | Praktische Aufgabe auf aktuellem Niveau |
+| `/ueben` | Praktische Aufgabe auf aktuellem Niveau |
 | `/challenge` | Anspruchsvolle Aufgabe ohne Hilfestellung |
 | `/debug` | Fehlerhaften Code analysieren und korrigieren |
 | `/tipp` | Gezielter Hinweis ohne Lösungsverraten |

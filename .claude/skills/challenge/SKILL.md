@@ -11,7 +11,7 @@ Kein Führen, kein Tipp — erst denken, dann Feedback.
 
 ## Abgrenzung
 
-- **Nicht /üben** — keine enge, geführte Aufgabe auf gleichem Niveau, sondern bewusster Sprung nach oben
+- **Nicht /ueben** — keine enge, geführte Aufgabe auf gleichem Niveau, sondern bewusster Sprung nach oben
 - **Nicht /quiz** — kein Abfragen per Frage, sondern etwas produzieren unter höherem Anspruch
 - **Nicht /debug** — kein Fehler suchen, sondern eigenständig konstruieren oder entscheiden
 

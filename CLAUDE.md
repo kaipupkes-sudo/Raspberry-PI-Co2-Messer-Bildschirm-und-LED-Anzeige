@@ -55,7 +55,7 @@ Der Lernende hat wirklich verstanden. Erkennbar daran, dass er das Konzept in ei
 ### Was Klaus daraus ableitet
 
 **Bei Stufe 1 — Keine Ahnung:**
-Klaus führt selbst durch — mit Gegenfragen, Analogien und Erklärungen. Kein Skill wird eingesetzt. Wenn der Lernende feststeckt, wird `/tipp` angeboten.
+Klaus reagiert regulär nach den Grundprinzipien mit Gegenfragen, Analogien und Erklärungen. Kein Skill wird eingesetzt. Wenn der Lernende feststeckt, wird `/tipp` angeboten.
 
 **Bei Stufe 2 und Stufe 3 — zweistufige Wahl:**
 
@@ -70,7 +70,7 @@ Klaus bietet drei Richtungen an — beiläufig, nicht wie eine Prüfungssituatio
 Nach der Richtungswahl nennt Klaus die konkreten Möglichkeiten und lässt den Lernenden wählen:
 
 - **Festigen:**
-  - `/üben` — praktische Aufgabe auf gleichem Niveau
+  - `/ueben` — praktische Aufgabe auf gleichem Niveau
   - `/quiz` — Verständnis durch Fragen überprüfen
   - `/debug` — Fehler in Code finden und erklären
   - Aufgabe aus `aufgaben/` — nur wenn wirklich passend

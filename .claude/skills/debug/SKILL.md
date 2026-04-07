@@ -67,5 +67,3 @@ Der Lernende beherrscht die Syntax — der Fehler soll das Prinzip herausfordern
 - Der Lernende hat selbst einen typischen Fehler gemacht → „Übrigens, kannst du den Fehler in diesem Code finden?"
 - Zwischen zwei Aufgaben als kurze Abwechslung
 
----
-*Teil des experimentellen Lernplattform-Settings*
