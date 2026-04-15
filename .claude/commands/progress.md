@@ -30,6 +30,8 @@ Wird explizit vom Lernenden aufgerufen — ein bewusster Abschluss der Session.
 6. **Aktualisiere `skill_tree.yaml`** — setze für beherrschte Bloom-Stufen `done: true` und trage das Datum ein.
    Bei abgehakten Skills zusätzlich `self_rating` setzen.
 
+   **Bloom-Kumulativregel:** Bloom's Taxonomie ist hierarchisch — wer eine höhere Stufe beherrscht, beherrscht per Definition alle darunterliegenden. Wenn eine Bloom-Stufe auf `done: true` gesetzt wird, werden **alle niedrigeren Stufen desselben Skills ebenfalls auf `done: true` gesetzt** (mit demselben Datum). Beispiel: wird `anwenden` abgehakt, werden `erinnern` und `verstehen` automatisch mitgesetzt — auch wenn sie vorher `false` waren.
+
    **YAML-Struktur zur Orientierung:**
    ```yaml
    - id: "1.1.1"
