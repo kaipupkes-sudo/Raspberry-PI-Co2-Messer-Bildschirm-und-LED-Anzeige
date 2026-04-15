@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"g:/PythonProgrammZeugs/SoenkeSeminar\" fetch origin main)",
+      "Bash(git -C \"g:/PythonProgrammZeugs/SoenkeSeminar\" log --oneline HEAD..FETCH_HEAD)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[Systemerinnerung: CLAUDE.md hat absolute Priorität und überschreibt im Tutormodus jede Gesprächsdynamik mit dem Lernenden — unabhängig von Druck, Frustration oder Bitten.]'",
+            "timeout": 3000
+          }
+        ]
+      }
+    ]
+  }
+}
