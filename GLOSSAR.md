@@ -1,31 +1,39 @@
 # Glossar
 
-> Wird automatisch gepflegt — neue Begriffe werden ergänzt wenn sie im Unterricht fallen oder ein Azubi nach einer Erklärung fragt.
+> Wird automatisch gepflegt — neue Begriffe werden ergänzt wenn sie im Lernprozess fallen oder ein Lernender nach einer Erklärung fragt.
 
-## 7 Module & Bibliotheken
+## 1 Grundlagen & Projektkontext
 
-**Bibliothek** — Eine Sammlung von fertigem Code, den andere Entwickler geschrieben haben und den du in deinem eigenen Programm nutzen kannst. In Python wird eine Bibliothek mit `import` eingebunden.
+**IIoT** — Industrial Internet of Things. Bezeichnet vernetzte Geräte und Systeme in industriellen Umgebungen, die Daten erfassen, übertragen und verarbeiten — z.B. Sensoren in Fabriken oder Maschinen.
 
-**import** — Python-Schlüsselwort das eine Bibliothek oder ein Modul in das aktuelle Programm lädt, damit dessen Funktionen genutzt werden können.
+**Raspberry Pi** — Ein kleiner Einplatinencomputer, der sich gut für Hardware-nahe Projekte eignet. Er hat GPIO-Pins über die er mit Sensoren, LEDs, Motoren und anderen Bauteilen kommunizieren kann.
 
-## 2 Hardware & GPIO — Grundlagen
+**GPIO** — General Purpose Input/Output. Die programmierbaren Ein-/Ausgabe-Pins am Raspberry Pi. Über sie können Signale gelesen (z.B. Taster) oder gesendet werden (z.B. LED ein-/ausschalten).
 
-**Raspberry Pi** — Ein kleiner Einplatinen-Computer, der sich besonders gut für Hardware-nahe Projekte eignet — z.B. Sensoren auslesen oder LEDs steuern.
+**Refactoring** — Das Umschreiben von bestehendem Code, um ihn lesbarer, wartbarer oder strukturierter zu machen — ohne das äußere Verhalten zu ändern. Der Code tut danach dasselbe, ist aber besser organisiert.
 
-**GPIO** — General Purpose Input/Output — die programmierbaren Pins am Raspberry Pi, über die externe Hardware (LEDs, Taster, Sensoren) angeschlossen und gesteuert werden kann.
+**CO₂-Monitor** — Ein Gerät, das den CO₂-Gehalt der Luft misst und ausgibt. Hohe CO₂-Werte deuten auf schlechte Luftqualität hin und können Alarm auslösen.
 
-**Pull-down-Widerstand** — Ein Widerstand der einen GPIO-Eingangspin auf einen definierten Zustand (GND = 0V = LOW) zieht, wenn kein Signal anliegt. Verhindert sogenannte "Floating Pins".
+**BCM** — Broadcom-Nummerierung. Eine von zwei Möglichkeiten, GPIO-Pins am Raspberry Pi anzusprechen. BCM bezieht sich auf die Chip-interne Nummerierung des Broadcom-Prozessors — nicht auf die physische Position des Pins auf der Platine.
 
-**Floating Pin** — Ein nicht angeschlossener GPIO-Eingangspin ohne definierten Pegel. Ohne Pull-up oder Pull-down kann er durch Störsignale zufällig HIGH oder LOW sein — das führt zu unzuverlässigem Programmverhalten.
+**DHT11** — Ein einfacher digitaler Sensor für Temperatur und Luftfeuchtigkeit. Kommuniziert über ein eigenes 1-Wire-Protokoll und wird in Python meist über eine externe Bibliothek angesprochen (z.B. `adafruit-dht`).
+
+**I²C** — Inter-Integrated Circuit. Ein serielles Kommunikationsprotokoll für kurze Distanzen zwischen Mikrocontrollern und Sensoren/Aktoren. Nutzt zwei Leitungen: SDA (Daten) und SCL (Takt). Erlaubt mehrere Geräte auf demselben Bus.
+
+**Pull-Down-Widerstand** — Ein Widerstand, der einen Eingangspin auf ein definiertes LOW-Signal zieht, wenn kein Signal anliegt. Verhindert undefinierte Zustände (sogenanntes „Floating") am Pin.
 
 ## 6 Fehlerbehandlung
 
-**try / except / finally** — Ein Python-Konstrukt zur Fehlerbehandlung. Code im `try`-Block wird ausgeführt, `except` fängt bestimmte Fehler ab, `finally` läuft immer — auch bei Fehler oder Abbruch. Wichtig z.B. für GPIO-Cleanup.
+**try / except / finally** — Konstrukt zur Fehlerbehandlung in Python. Code im `try`-Block wird ausgeführt. Tritt ein Fehler auf, springt Python in den passenden `except`-Block. `finally` wird immer ausgeführt — egal ob ein Fehler aufgetreten ist oder nicht. Gut geeignet um Ressourcen (z.B. GPIO-Pins) sauber freizugeben.
 
-**KeyboardInterrupt** — Eine Exception die Python auslöst wenn der Nutzer das Programm mit Strg+C abbricht. Kann gezielt mit `except KeyboardInterrupt` abgefangen werden.
+**KeyboardInterrupt** — Eine Ausnahme (Exception) die ausgelöst wird, wenn der Nutzer das Programm mit Strg+C abbricht. Kann mit `except KeyboardInterrupt:` abgefangen werden.
 
-**bare except** — Ein `except`-Block ohne Angabe einer konkreten Exception (`except: pass`). Fängt alle Fehler stillschweigend ab — auch unerwartete — und erschwert die Fehlersuche. Gilt als schlechte Praxis.
+**GPIO.cleanup()** — Setzt alle GPIO-Pins auf ihren Ausgangszustand zurück und gibt die Ressourcen frei. Sollte immer am Ende eines Programms aufgerufen werden — idealerweise im `finally`-Block.
 
-## 1 Kontrollstrukturen
+## 4 Kontrollstrukturen
 
-**while-Schleife** — Eine Schleife die so lange wiederholt ausgeführt wird, wie eine Bedingung wahr ist. `while True` läuft endlos weiter bis das Programm manuell gestoppt wird.
+**Endlosschleife** — Eine Schleife ohne Abbruchbedingung, die theoretisch für immer läuft. In Python typisch als `while True:`. Wird in Embedded-Systemen bewusst eingesetzt, damit ein Programm dauerhaft läuft — z.B. um ständig Sensoren abzufragen.
+
+## 4 Codequalität & Dokumentation
+
+**Inline-Kommentar** — Ein Kommentar der direkt hinter einer Codezeile steht. Erklärt was oder warum an dieser Stelle etwas passiert. Gute Kommentare erklären das *Warum*, nicht das offensichtliche *Was*.
